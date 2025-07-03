@@ -1,0 +1,68 @@
+.rdnum:hover{
+    transform: scale(3.3); /* 稍微放大 */
+    cursor: pointer;
+    color: rgb(255, 70, 70);
+}
+
+<li>
+    <span class="bold">「學生閱讀過程階段」與「家校閱讀過程階段」：</span><br>
+    「參加者」需於閱讀期間完成相關紀錄。（詳情請參閱
+    <span>
+        <a href="#" id="toProcess" class="rdnum fw-bold" 
+        style="text-decoration: underline; text-decoration-thickness:0.15rem;;">
+        「過程階段」</a>
+    </span>）
+</li>
+
+<li>
+    <span class="bold">「學生閱讀過程評量」、「學生閱讀成果評量」與「家校閱讀過程評量」：</span><br>
+    <ol>
+        <li>
+            <!-- <span class="bold">「學生閱讀過程評量」：</span><br> -->
+            「學生閱讀過程評量」：依據參加者的紀錄，例如興趣與習慣等，進行評量。<br>
+        </li>
+        <li>
+            <!-- <span class="bold">「學生閱讀成果評量」：</span><br> -->
+            「學生閱讀成果評量」：依據參加者的紀錄，例如閱讀的書籍與內容等，進行面談評量。
+        </li>
+        <li>
+            「家校閱讀過程評量」：依據參加者的紀錄，例如家庭閱讀的緊密度等，進行評量。
+        </li>
+        （詳情參照
+            <span>
+                <a href="#" id="toEvaluate" class="rdnum fw-bold" 
+                style="text-decoration: underline; text-decoration-thickness:0.15rem;;">
+                「評量階段」</a>
+            </span>）
+    </ol>
+</li>
+
+// ==========================實施辦法中第三...過程階段跳轉==============================
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("toProcess").addEventListener("click", function (event) {
+        event.preventDefault(); // 阻止預設超連結動作
+
+        // 找到「廣量閱讀」的 tab 按鈕
+        var processTab = document.getElementById("pills-process-tab");
+
+        if (processTab) {
+            processTab.click(); // 觸發點擊事件，切換到「廣量閱讀」
+        }
+    });
+});
+
+// ==========================實施辦法中第四-3...評量階段跳轉==============================
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("toEvaluate").addEventListener("click", function (event) {
+        event.preventDefault(); // 阻止預設超連結動作
+
+        // 找到「廣量閱讀」的 tab 按鈕
+        var evaluateTab = document.getElementById("pills-evaluate-tab");
+
+        if (evaluateTab) {
+            evaluateTab.click(); // 觸發點擊事件，切換到「廣量閱讀」
+        }
+    });
+});

@@ -1,0 +1,1610 @@
+/* ==================== 全局樣式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', sans-serif;
+    background-color: #e8edf0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* 禁止橫向滾動 */
+    width: 100%; /* 確保所有內容在小螢幕上自適應 */
+}
+
+/* ==================== Header 標題區 ==================== */
+header {
+    background-color: #8d9fb3 !important;  /* a9c5b6保持不變 */
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.logo-container img {
+    max-height: 70px;
+    width: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* 讓 logo 保持在左側 */
+}
+
+header .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 預設漢堡選單按鈕隱藏，僅在小螢幕顯示 */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 讓選單在小螢幕時隱藏 */
+#mobile-menu {
+    flex-direction: column;
+    background-color: #8d9fb3;
+    padding: 10px 0;
+}
+/* ==================== 導覽列 ==================== */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    gap: 15px;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #6ed1cad4;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #e8f0ec;
+    color: #8db39f;
+}
+
+.navbar {
+    background-color: transparent; /* 確保不影響 header */
+}
+
+/* ==================== Topbar 樣式 ==================== */
+.topbar {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.topbar h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6B8496;
+    margin: 0;
+}
+
+.topbar hr {
+    width: 50%;
+    margin: 10px auto;
+    border: none;
+    border-top: 2px solid #6B8496;
+}
+/* ==================== 跑馬燈 ==================== */
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+    /* width: 71.5%; */
+
+}
+.marquee-content {
+    display: inline-block;
+    position: relative;
+    animation: marquee 45s linear infinite;
+}
+@keyframes marquee {
+    0%   { right: -100%; }
+    80% { right: 100%; }
+}
+
+/* ==================== 主要內容區塊 ==================== */
+.container-fluid {
+    padding: 0;
+}
+
+section {
+    width: 70%;
+    margin: 10px auto;
+    padding: 2%;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: url("../img/so-white.png");
+}
+
+/* ==================== 🏠 首頁區塊 (`.home-section`) ==================== */
+.home-section {
+    width: 70%;
+    margin: 30px auto;
+    padding: 2%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* 限制最大寬度 */
+    overflow: hidden;
+}
+
+/* ==================== 📌 標題樣式（底線隨字數變化） ==================== */
+.section-title {
+    font-size: 1.8rem !important;
+    font-weight: bold;
+    color: #004080; /* 深藍色，突出標題 */
+    padding: 0.5rem 0;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100%; /* 與標題文字長度匹配 */
+    height: 3px; /* 底線厚度 */
+    background-color: #004080; /* 與標題文字相同顏色 */
+    margin-top: 1%;
+}
+
+/* ==================== 📝 內容區塊 ==================== */
+.home-section .content {
+    font-size: 24px;
+    color: #000000;
+    line-height: 1.8;
+    padding: 2% 2%;
+}
+
+/* 讓內容的段落統一樣式 */
+.home-section .content p {
+    margin-bottom: 5%;
+}
+/* ==================== 📰 最新消息版面設計 ==================== */
+.news-section {
+    width: 70%;
+    margin: 30px auto;
+    padding: 2%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* 最新消息標題樣式 */
+.news-section .section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #004080;
+    padding: 0.5rem 0;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.news-section .section-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #004080;
+    margin-top: 5px;
+}
+
+/*最新消息單則公告 */
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    gap:5%;
+    /* background-color: #f9f9f9; */
+    padding: 15px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    margin-bottom: 15px;
+}
+
+/* 日期樣式 */
+.news-date {
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 1.2rem;
+    min-width: 120px;
+    text-align: center;
+    border-right: 3px solid #d9534f; /* 在日期右側加一條分隔線 */
+    padding-right: 15px;
+}
+
+/* 內容樣式 */
+.news-content {
+    flex: 1;
+    font-size: 22px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.news-content ul {
+    padding-left: 15px;
+    list-style-type: disc; /* 使用黑點 */
+}
+
+.news-content ul li {
+    margin-bottom: 2%; /* 調整公告之間的間距 */
+}
+
+/* 📱 小螢幕 (max-width: 768px) 時改變排列方式 */
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column; /* 改為直向排列 */
+        align-items: flex-start; /* 讓內容靠左對齊 */
+        text-align: left;
+    }
+
+    .news-date {
+        text-align: center; /* 讓日期置中 */
+        width: 100%; /* 讓日期區塊佔滿寬度 */
+        border-right: none; /* 移除原本的右側分隔線 */
+        border-bottom: 3px solid #d9534f; /* 加一條底線 */
+        padding: 10px 0;
+    }
+
+    .news-content {
+        text-align: left; /* 讓公告內容靠左 */
+        margin-top: 10px; /* 加一些間距 */
+    }
+}
+@media (max-width: 480px) {
+    .news-content {
+        font-size: 15px;
+    }
+}
+/* ==================== 📅 重要日程的內容排版 ==================== */
+/* 重新設計 重要日程 區塊 */
+.important-dates {
+    width: 70%;
+    margin: 30px auto;
+    padding: 2%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* 🔹 單個日期項目 */
+.date-item {
+    flex: 1;
+    min-width: 300px; /* 確保區塊寬度一致 */
+    max-width: 500px; /* 限制最大寬度，避免過寬 */
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 🔹 讓內容橫向排列 (桌機) */
+.date-container {
+    display: flex;
+    flex-wrap: wrap; /* 小螢幕時自動換行 */
+    justify-content: space-between;
+    gap: 20px;
+}
+/* 🔹 標題部分 */
+.date-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 10px; /* 確保標題與內容有間距 */
+    min-height: 40px; /* 確保標題高度一致，避免因換行導致對齊錯位 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔹 內容部分 */
+.date-content {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    min-height: 60px; /* 確保內容區塊高度一致 */
+}
+.important-dates p{
+    font-size: 22px;
+
+}
+
+
+/* 讓列表靠左並加強可讀性 */
+.important-dates ul {
+    list-style-type: disc;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.important-dates ul li {
+    font-size: 22px; /* 放大字體 */
+    line-height: 2.2; /* 增加行高 */
+    padding-left: 0rem; /* 增加左邊距讓內容更易讀 */
+    position: relative;
+}
+
+/* 在每個項目前添加自訂符號 */
+.important-dates ul li::before {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    font-size: 22px;
+    color: #004080; /* 與標題一致 */
+}
+
+/* 📱 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .important-dates {
+        width: 85%;
+    }
+    .date-item {
+        min-width: 250px;
+    }
+    .date-title {
+        font-size: 20px;
+    }
+    .date-content {
+        font-size: 17px;
+    }
+    .date-container {
+        flex-direction: column; /* 讓內容變為直向排列 */
+        align-items: center; /* 讓所有日期區塊置中 */
+    }
+
+    .date-item {
+        width: 90%; /* 調整寬度，讓區塊不會太窄 */
+        text-align: center; /* 讓文字置中 */
+    }
+}
+
+/* 📱 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .important-dates {
+        width: 95%;
+    }
+    .date-container {
+        flex-direction: column; /* 讓日期區塊在小螢幕上變成縱向排列 */
+        align-items: center;
+    }
+    .date-item {
+        width: 90%;
+        text-align: center;
+    }
+    .date-title {
+        font-size: 18px;
+    }
+    .date-content {
+        font-size: 16px;
+    }
+}
+
+/* 📱 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .important-dates {
+        width: 100%;
+    }
+    .date-title {
+        font-size: 17px;
+    }
+    .date-content {
+        font-size: 15px;
+    }
+}
+/* ==================== 🔗 相關連結區塊 ==================== */
+/* 重新設計「相關活動」區塊 */
+.related-activities {
+    width: 70%;
+    margin: 30px auto;
+    padding: 2%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.related-activities-content{
+    align-items: center;
+}
+/* 讓列表靠左，強調可讀性 */
+.related-activities-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    
+}
+
+.related-activities-content ul li {
+    font-size: 22px; /* 放大字體 */
+    line-height: 2.2; /* 增加行高 */
+    padding-left: 1.5em; /* 增加左邊距讓內容更易讀 */
+    position: relative;
+}
+
+/* 在每個項目前添加自訂符號 */
+.related-activities-content ul li::before {
+    content: "🔗"; /* 使用連結符號強調 */
+    position: absolute;
+    left: 0;
+    font-size: 22px;
+    color: #004080; /* 與標題一致 */
+}
+@media (max-width: 768px) {
+    .related-activities-content ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+    
+    .related-activities-content ul li {
+        font-size: 17px; /* 放大字體 */
+        line-height: 2.2; /* 增加行高 */
+        padding-left: 1.5em; /* 增加左邊距讓內容更易讀 */
+        position: relative;
+    }
+    
+    /* 在每個項目前添加自訂符號 */
+    .related-activities-content ul li::before {
+        content: "🔗"; /* 使用連結符號強調 */
+        position: absolute;
+        left: 0;
+        font-size: 15px;
+        color: #004080; /* 與標題一致 */
+    }
+}
+
+
+/* 📱 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .related-activities {
+        font-size: 14px;;
+    }
+}
+
+/* ===================辦理單位=================== */
+.host-section {
+    width: 70%;
+    margin: 30px auto;
+    padding: 2%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.unit-image {
+    width: 100px; /* 設定寬度，確保統一 */
+    height: auto; /* 高度自適應 */
+    object-fit: contain; /* 確保圖片不變形 */
+    display: block;
+    margin: 0 auto; /* 讓 LOGO 置中 */
+}
+
+/* 圖片下方的文字 */
+.unit-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px; /* 讓文字緊貼圖片 */
+    text-align: center;
+}
+/* LOGO 容器（辦理單位區塊） */
+.unit-container {
+    display: flex;
+    flex-direction: column; /* 讓 LOGO 和文字垂直排列 */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* 讓兩個 LOGO 之間有間距 */
+}
+
+/* ✅ 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .host-section {
+        width: 85%;
+    }
+    .unit-image {
+        width: 180px; /* 減小 LOGO 大小 */
+    }
+    .unit-text {
+        font-size: 17px;
+    }
+}
+
+/* ✅ 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .host-section {
+        width: 95%;
+    }
+    .unit-image {
+        width: 160px; /* 讓 LOGO 縮小 */
+    }
+    .unit-text {
+        font-size: 16px;
+    }
+}
+
+/* ✅ 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .host-section {
+        width: 100%;
+    }
+    .unit-image {
+        width: 140px; /* 進一步縮小 */
+    }
+    .unit-text {
+        font-size: 15px;
+    }
+}
+/* ==================== 每個內容區塊的小標題 ==================== */
+.item-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #004080; /* 深藍色，突出標題 */
+    margin:1% 2%;
+    display: inline-block;
+    position: relative;
+}
+
+.item-title::after {
+    content: "";
+    display: block;
+    width: 100%; /* 與標題文字長度匹配 */
+    height: 3px; /* 底線厚度 */
+    background-color: #004080; /* 與標題文字相同顏色 */
+    margin-top: 1%;
+}
+/* ✅ 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .item-title {
+        font-size: 32px; /* 略縮小標題字體 */
+    }
+    .item-title::after {
+        height: 3px; /* 底線變薄 */
+        bottom: -4px;
+    }
+}
+
+/* ✅ 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .item-title {
+        font-size: 28px; /* 進一步縮小字體 */
+    }
+    .item-title::after {
+        height: 2.5px;
+        bottom: -3px;
+    }
+}
+
+/* ✅ 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .item-title {
+        font-size: 30px; /* 手機上最適合的字體大小 */
+        width: auto; /* 讓標題適應內容寬度 */
+        margin: 3% auto 3% 0; /* 確保左對齊 */
+        text-align: left; /* 仍然靠左 */
+        white-space: normal; /* 允許在小螢幕換行 */
+    }
+    .item-title::after {
+        height: 2px; /* 底線最薄 */
+        width: 100%; /* 讓底線隨文字變化 */
+        bottom: -2px;
+    }
+}
+.phase-title{
+    background-color: #6B8496; /* 標題底色 */
+    color: white; /* 標題文字顏色 */
+    font-weight: bold; /* 加粗 */
+    padding: 1rem; /* 標題內邊距 */
+    margin-bottom: 0%; /* 與內容區分 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字陰影 */
+    font-size: 32px;
+}
+
+/* ✅ 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .phase-title {
+        font-size: 32px; /* 略縮小標題字體 */
+        padding: 0.8rem;
+    }
+}
+
+/* ✅ 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .phase-title {
+        font-size: 28px; /* 進一步縮小字體 */
+        padding: 0.6rem;
+    }
+}
+
+/* ✅ 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .phase-title {
+        font-size: 24px; /* 手機版適合的字體大小 */
+        padding: 0.5rem;
+        text-shadow: none; /* 移除陰影以提高可讀性 */
+    }
+}
+/* ==================== 各分頁內容區塊 ==================== */
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* ==================== 按鈕 ==================== */
+button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button1 {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #6B8496;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 辦理單位區塊 ==================== */
+
+.content {
+    display: flex;
+    justify-content: center; /* 讓 LOGO 置中 */
+    align-items: center;
+    width: 100%;
+
+}
+
+
+/* ==================理念====================== */
+.certification-idea {
+    width: 70%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 2%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.certification-idea-content { 
+    font-size: 22px;
+    color: #333;
+    text-indent: 2rem;
+    margin: 1% 5%;
+    font-family: 'DFKai-SB', 'KaiTi', serif;
+    line-height: 1.8;
+    text-align: justify;
+    /* display: inline; */
+}
+
+.certification-idea-content h1 ,
+.certification-idea-content h3 {
+    /* font-size: 28px; */
+    font-weight: bolder;
+    text-align: center;
+    text-indent: 0;
+    margin-top: 20px;
+}
+
+.file {
+    font-size: 22px; /* 預設電腦版字體 */
+    color: #333;
+    margin: 1% 5%;
+    font-family: 'DFKai-SB', 'KaiTi', serif;
+}
+
+
+.dash{
+    font-family: "Times New Roman", Georgia, serif!important;
+    font-weight: bold!important;
+    margin: 0 0.2em!important; /* 左右各增加 0.5em 空間 */
+}
+
+.certification-idea-content ol:not(.benifit){
+    list-style: none;          /* 取消 1. 2. 3. */
+    counter-reset: cn;         /* 啟動自訂計數器 */
+    margin: 0;                 /* 視需要保留外距 */
+    padding-left: 0;           /* 讓縮排全由 <li> 控制 */
+    font-family: 'DFKai-SB','KaiTi',serif;
+    font-size: 22px;
+}
+
+.certification-idea-content ol:not(.benifit) > li{
+    position: relative;
+    counter-increment: cn;     /* 每項 +1 */
+    
+    /*  ↓↓↓ 這兩行形成「懸掛縮排」 ↓↓↓  */
+    padding-left: 6.5em;         /* 內容起點（整段縮排寬度） */
+    text-indent: 0;            /* 後續行保持在 padding-left 起點 */
+
+    line-height: 1.8;          /* 行距可依字級微調 */
+    margin: .6em 0;            /* 項目間距 */
+}
+
+.certification-idea-content ol:not(.benifit) > li::before{
+    content: "第" counter(cn, cjk-ideographic) "、";
+    position: absolute;
+    left: 0; top: 0;
+    width: 6.5em;              /* 編號區寬度 ≤ padding-left */
+    text-align: right;         /* 讓「、」貼齊右邊 */
+    padding-right: .5em;       /* 「、」與內容留半字距 */
+}
+/* ✅ 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .certification-idea {
+        width: 90%;
+        padding: 3%;
+    }
+    .certification-idea-content {
+        font-size: 18px;
+        text-indent: 1.5rem;
+        margin: 2% 5%;
+    }
+    .certification-idea-content h3 {
+        font-size: 24px;
+    }
+    .certification-idea-content p,
+    .certification-idea-content li,
+    .certification-idea-content span {
+        font-size: 18px;
+    }
+    .file {
+        font-size: 18px;
+        margin: 2% 5%;
+        display: block !important;
+    }
+    .file a{
+        font-size: 18px;
+    }
+}
+
+/* ✅ 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .certification-idea {
+        width: 95%;
+        padding: 4%;
+    }
+    .certification-idea-content {
+        font-size: 17px;
+        text-indent: 1rem;
+        margin: 3% 5%;
+    }
+    .certification-idea-content h3 {
+        font-size: 22px;
+    }
+    .certification-idea-content p,
+    .certification-idea-content li,
+    .certification-idea-content span {
+        font-size: 17px;
+    }
+    .file {
+        font-size: 17px;
+        margin: 3% 5%;
+        display: block !important;
+    }
+    .file a{
+        font-size: 17px;
+    }
+}
+
+/* ✅ 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .certification-idea {
+        width: 100%;
+        padding: 5%;
+    }
+    .certification-idea-content {
+        font-size: 16px;
+        text-indent: 1rem;
+        margin: 5%;
+        line-height: 1.6;
+    }
+    .certification-idea-content h3 {
+        font-size: 20px;
+    }
+    .certification-idea-content p,
+    .certification-idea-content li,
+    .certification-idea-content span {
+        font-size: 16px;
+    }
+    .file {
+        font-size: 16px;
+        margin: 5%;
+        line-height: 1.6;
+        display: block !important;
+    }
+    .file a{
+        font-size: 16px;
+    }
+}
+
+/* 檔案連結的基本樣式 */
+.file-link {
+    color: black;
+    text-decoration:underline; /* 移除預設底線 */
+    font-weight: bold;
+    transition: color 0.1s ease-in-out; /* 平滑變色效果 */
+    /* padding-left: 2rem; */
+}
+
+/* 滑鼠懸停時變色 */
+.file-link:hover {
+    color: red; /* 懸疑感的紅色 */
+    text-decoration: underline; /* 滑鼠移過去時加上底線 */
+}
+/* ====================實施辦法 (`pills-law`) ==================== */
+.law {
+    width: 70%;
+    margin: 20px auto;
+    padding: 0%;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.law-item {
+    margin: 2 rem;
+    padding: 0%;
+    width: 100%;
+}
+/* .law-item p {
+    font-size: 18px; 
+    color: #333;
+    text-indent: 2rem;
+    line-height: 1.8;
+    
+    font-weight: bolder;
+} */
+/* ✅ 讓非列表區塊的文字與列點格式一致 */
+.law-intro-block {
+    font-size: 18px;
+    color: #333;
+    text-indent: 2rem;
+    line-height: 1.8;
+    margin: 1% 10%;
+}
+
+/* 主清單：第一、第二、第三... */
+.law-numbering {
+    list-style: none;
+    counter-reset: law-counter;
+    padding-left:4rem;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 3% auto;
+}
+
+.law-numbering > li {
+    counter-increment: law-counter;
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 1% 5% ;
+}
+
+.law-numbering > li::before {
+    content: "第" counter(law-counter, cjk-ideographic) "、";
+    position: absolute;
+    left: -2em;
+    font-weight: bold;
+}
+
+/* 子清單：使用 (i)(ii)(iii)... */
+.sub-law-numbering {
+    list-style: none;
+    counter-reset: sub-counter;
+    padding-left: 0em;
+    line-height: 1.8;
+}
+
+.sub-law-numbering > li {
+    counter-increment: sub-counter;
+    position: relative;
+    padding-left: 2rem; /* 增加左側間距 */
+}
+
+.sub-law-numbering > li::before {
+    content: "(" counter(sub-counter, lower-roman) ") ";
+    position: absolute;
+    left: 0;
+    /* font-weight: bold; */
+    min-width: 3rem; /* 增加編號的最小寬度，使內容稍微右移 */
+    display: inline-block; /* 讓編號與內容對齊 */
+}
+
+
+/* 子清單：使用 1. 2. 3.... */
+.sub-law-numbering-num {
+    list-style: none;
+    counter-reset: sub-counter;
+    padding-left: 0em;
+    line-height: 1.8;
+}
+
+.sub-law-numbering-num > li {
+    counter-increment: sub-counter;
+    position: relative;
+    padding-left: 2rem; /* 增加左側間距 */
+}
+
+.sub-law-numbering-num > li::before {
+    content:  counter(sub-counter) ".";
+    position: absolute;
+    left: 0;
+    /* font-weight: bold; */
+    min-width: 3rem; /* 增加編號的最小寬度，使內容稍微右移 */
+    display: inline-block; /* 讓編號與內容對齊 */
+}
+.sublaw-numbering-intro {
+    padding-left: 0rem; /* 讓標題與清單對齊 */
+    margin: 1%;
+    font-weight: bold;
+}
+
+/* ✅ 主要內容的響應式調整 */
+@media (max-width: 1024px) { 
+    .law {
+        width: 85%; /* 中等螢幕時擴展寬度 */
+    }
+    .law-intro-block {
+        font-size: 17px; /* 減小字體大小 */
+        margin: 2% 5%;
+    }
+    .law-numbering {
+        padding-left: 2rem; /* 調整列表縮排 */
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .law {
+        width: 95%; /* 平板和小型裝置時調整 */
+        padding: 4%;
+    }
+    .law-intro-block {
+        font-size: 16px; /* 進一步縮小字體 */
+        text-indent: 1.5rem;
+        margin: 3% 5%;
+    }
+    .law-numbering {
+        padding-left: 1.5rem;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) { 
+    .law {
+        width: 100%; /* 手機版填滿 */
+        padding: 5%;
+    }
+    .law-intro-block {
+        font-size: 15px; /* 手機版字體再縮小 */
+        text-indent: 1rem;
+        margin: 5%;
+        line-height: 1.6;
+    }
+    .law-numbering {
+        padding-left: 1rem;
+        font-size: 15px;
+    }
+
+}
+/* ====================過程階段 (`pills-process`) ==================== */
+.process {
+    width: 70%;
+    margin: 20px auto;
+    padding: 0%;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.process-item {
+    margin: 2 rem;
+    padding: 0%;
+    width: 100%;
+}
+
+.process-item p {
+    font-size: 18px;
+    color: #333;
+    text-indent: 2rem;
+    margin:1% 5%;
+    
+}
+
+
+/* 主清單：第一、第二、第三... */
+.process-numbering {
+    font-size: 20px; /* 確保比 .item-title 小 */
+    list-style: none;
+    counter-reset: process-counter;
+    padding-left: 4rem;
+    line-height: 1.8;
+    margin: 3% auto;
+}
+
+.process-numbering > li {
+    counter-increment: process-counter;
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 1% 5%;
+}
+
+.process-numbering > li::before {
+    content:  counter(process-counter, cjk-ideographic) "、";
+    position: absolute;
+    left: -2em;
+    font-weight: bold;
+}
+
+/* 子清單：使用 (i)(ii)(iii)... */
+.sub-numbering {
+    list-style: none;
+    counter-reset: sub-counter;
+    padding-left: 2em;
+    line-height: 1.8;
+}
+
+.sub-numbering > li {
+    counter-increment: sub-counter;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.sub-numbering > li::before {
+    content: "(" counter(sub-counter, lower-roman) ") ";
+    position: absolute;
+    left: -1.5em;
+    font-weight: bold;
+}
+
+.clickable-img {
+    cursor: pointer; /* 讓圖片變成可點擊狀態 */
+    transition: transform 0.2s ease-in-out;
+    background-color: transparent !important; /* 移除白色底色 */
+    border: none !important; /* 移除邊框 */
+}
+
+.clickable-img:hover {
+    transform: scale(1.05); /* 當滑鼠移到圖片上時稍微放大 */
+}
+
+/* 讓放大後的圖片填滿整個螢幕，但不變形 */
+.fullscreen-img {
+    width: 80vw;  /* 設定寬度等於整個視窗 */
+    height: auto; /* 設定高度等於整個視窗 */
+    object-fit: contain; /* 確保圖片完整顯示，不變形 */
+}
+
+
+
+/* ✅ 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .process p{
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    .process-numbering {
+        font-size: 18px;
+    }
+    .process-img{
+        width: 100% !important;  /* 讓圖片佔滿容器 */
+        max-width: none !important;  /* 移除最大寬度限制 */
+        height: auto !important;  /* 保持圖片比例 */
+    }
+}
+
+/* ✅ 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .process-numbering {
+        font-size: 17px;
+        padding-left: 2rem;
+    }
+    .process p{
+        font-size: 17px;
+        line-height: 2;
+    }
+    .process-img{
+        width: 100% !important;  /* 進一步放大 */
+        max-width: none !important;
+        height: auto !important;
+
+    }
+
+
+    /* 讓圖片依然填滿小螢幕 */
+    .fullscreen-img {
+        width: 95vw;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* ✅ 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .process-numbering {
+        font-size: 16px;
+        padding-left: 1.5rem;
+    }
+    .process p{
+        font-size: 16px;
+        line-height: 2;
+    }
+    .process-img{
+        width: 100% !important;  /* 讓圖片佔滿容器 */
+        max-width: none !important;  /* 移除最大寬度限制 */
+        height: auto !important;  /* 保持圖片比例 */
+    }
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+/* ==================== 活動報名 (`pills-apply`) ==================== */
+/* ✅ 電腦版 (桌機) */
+.apply {
+    width: 70%;
+    margin: 20px auto;
+    padding: 0%;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ 讓 .apply-item 在不同裝置保持一致 */
+.apply-item {
+    margin-bottom: 15px;
+    padding: 0%;
+    width: 100%;
+}
+
+/* ✅ 確保文字與 .process 文字一致 */
+.apply-item p,
+.apply-item li {
+    font-size: 20px; /* 與 process 相同 */
+    line-height: 1.8;
+    color: #333;
+    margin: 1% 5%;
+    padding-left: 1.3rem;
+}
+
+/* ✅ 主清單：一、二、三... */
+.apply-item ol {
+    list-style-type: cjk-ideographic;
+    padding-left: 2.5em;
+    margin-top: 1rem;
+    counter-reset: first-level;
+    font-size: 20px; /* 與 process 相同 */
+}
+
+/* ✅ 第一層清單 */
+.apply-item ol > li {
+    counter-increment: first-level;
+    font-size: 20px; /* 與 process 相同 */
+}
+
+/* ✅ 第二層清單：（一）、（二）、（三）... */
+.apply-item ol ol {
+    list-style: none;
+    counter-reset: second-level;
+    padding-left: 2.5em;
+    font-size: 18px; /* 次層清單稍小 */
+}
+
+.apply-item ol ol > li {
+    counter-increment: second-level;
+    position: relative;
+    padding-left: 2em; /* 避免與內容重疊 */
+    list-style-type: none;
+    font-size: 18px; /* 與次層清單統一 */
+}
+
+.apply-item ol ol > li::before {
+    content: "（" counter(second-level, cjk-ideographic) "）、 ";
+    position: absolute;
+    left: -2em;
+    font-size: 18px; /* 確保標號與內容大小一致 */
+}
+
+/* ✅ 按鈕樣式響應式設計 */
+.apply-btn, .form-btn {
+    background-color: #6B8496;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: inline-block; /* 讓按鈕不撐滿整行 */
+    text-align: center;
+    width: auto; /* 按鈕寬度根據內容大小調整 */
+    margin: 10px 0; /* 保持適當間距 */
+}
+
+.apply-btn:hover, .form-btn:hover {
+    background-color: #8db39f;
+}
+
+/* ✅ 響應式調整：平板 (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .apply {
+        width: 85%;
+    }
+    .apply-item p,
+    .apply-item li,
+    .apply-item ol,
+    .apply-item ol ol {
+        font-size: 18px; /* 與 process 相同 */
+    }
+    .apply-btn, .form-btn {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+        min-width: 110px; /* 平板最小按鈕大小 */
+    }
+}
+
+/* ✅ 響應式調整：小型螢幕 (max-width: 768px) */
+@media (max-width: 768px) {
+    .apply {
+        width: 95%;
+        padding: 4%;
+    }
+    .apply-item p,
+    .apply-item li,
+    .apply-item ol,
+    .apply-item ol ol {
+        font-size: 17px; /* 與 process 相同 */
+    }
+    .apply-btn, .form-btn {
+        font-size: 1rem;
+        padding: 7px 16px;
+        min-width: 100px; /* 手機上確保按鈕不會太小 */
+    }
+}
+
+/* ✅ 響應式調整：手機 (max-width: 480px) */
+@media (max-width: 480px) {
+    .apply {
+        width: 100%;
+        padding: 5%;
+    }
+    .apply-item p,
+    .apply-item li,
+    .apply-item ol,
+    .apply-item ol ol {
+        font-size: 16px; /* 與 process 相同 */
+    }
+    .apply-btn, .form-btn {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+        min-width: 90px; /* 小手機上最小按鈕 */
+    }
+}
+
+.form-btn{
+    background-color: #6B8496; /* 橙色按鈕 */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* ==================== 注意事項 (`pills-notice`) ==================== */
+.notice {
+    width: 70%;
+    margin: 20px auto;
+    padding: 0%;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notice-item {
+    margin-bottom: 20px;
+    padding: 0%;
+    width: 100%;
+}
+
+.notice-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.notice-item ol, .notice-item ul {
+    padding-left: 2em;
+}
+
+.notice-item li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.notice-item ol {
+    list-style-type: cjk-ideographic;
+}
+
+
+
+/* ==================== 響應式內容區塊 ==================== */
+/* 中螢幕（平板） */
+@media (max-width: 1199px) {
+    .container-fluid,
+    .home-section,
+    .news-section,
+    .important-dates,
+    .related-activities,
+    .law,
+    .process,
+    .evaluate,
+    .book,
+    .host-section {
+        width: 85%;
+        padding: 3%;
+    }
+}
+
+/* 小螢幕（手機） */
+@media (max-width: 767px) {
+    .container-fluid,
+    .home-section,
+    .news-section,
+    .important-dates,
+    .related-activities,
+    .law,
+    .process,
+    .evaluate,
+    .book,
+    .host-section {
+        width: 100%;
+        padding: 5%;
+    }
+}
+
+/* ==================== 響應式按鈕與選單 ==================== */
+/* 中螢幕（平板） */
+@media (max-width: 1199px) {
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* 小螢幕（手機） */
+@media (max-width: 767px) {
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+
+/* ==================== 響應式設計 ==================== */
+@media (max-width: 1200px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem!important;
+    }
+
+    .content {
+        width: 85%;
+    }
+}
+
+@media (max-width: 992px) {
+
+
+    header .d-flex {
+        flex-direction: column;  /* 讓標題圖和導覽列變成垂直排列 */
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-container {
+        gap: 30px; /* 縮小間距 */
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-link {
+        font-size: 16px; /* 導覽列文字變小 */
+        padding: 0.3rem 0.8rem;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-section {
+        width: 90%;
+        padding: 3%;
+    }
+    .menu-btn {
+        display: block;  /* 讓漢堡按鈕顯示 */
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: auto; /* 讓漢堡選單靠右 */
+    }
+    
+    /* 隱藏桌面版選單 */
+    .nav-pills.d-lg-flex {
+        display: none !important;
+    }
+    #readingTab {
+        flex-direction: column; /* 小螢幕時改為直列排列 */
+        align-items: center;
+    }
+
+    #readingTab .nav-item {
+        width: 60%; /* 讓按鈕在小螢幕佔滿寬度 */
+        text-align: center;
+    }
+
+    #readingTab .nav-link {
+        font-size: 1rem; /* 縮小按鈕文字大小 */
+        padding: 10px;
+        width: 100%; /* 讓按鈕填滿 */
+    }
+    
+    .home-section .section-title {
+        font-size: 1.5rem; /* 標題縮小 */
+    }
+
+    .home-section .content p,
+    .home-section .content ul {
+        font-size: 1rem; /* 文字稍微縮小 */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+        margin-left: auto; /* 讓漢堡選單靠右 */
+    }
+
+    #mobile-menu {
+        display: none;
+    }
+
+    .logo-container {
+        flex-direction: column; /* 小螢幕時讓 LOGO 堆疊 */
+        gap: 20px;
+    }
+
+    .nav {
+        display: none; /* 在小螢幕隱藏導覽列 */
+    }
+
+    .home-section {
+        width: 95%;
+        padding: 5%;
+    }
+
+    .home-section .section-title {
+        font-size: 1.3rem;
+    }
+
+    .home-section .content {
+        font-size: 0.95rem; /* 讓文字稍微縮小，避免超出 */
+    }
+
+    .home-section .content p,
+    .home-section .content ul {
+        font-size: 0.95rem; /* 進一步縮小文字，避免超出 */
+    }
+
+    #readingTab {
+        flex-direction: column; /* 小螢幕時改為直列排列 */
+        align-items: center;
+    }
+
+    #readingTab .nav-item {
+        width: 80%; /* 讓按鈕在小螢幕佔滿寬度 */
+        text-align: center;
+    }
+
+    #readingTab .nav-link {
+        font-size: 1rem; /* 縮小按鈕文字大小 */
+        padding: 10px;
+        width: 100%; /* 讓按鈕填滿 */
+    }
+}
+
+/* ==================== 確保所有區塊不會超出視窗 ==================== */
+.container-fluid, .content, .tab-content {
+    max-width: 100%; /* 限制最大寬度 */
+    overflow-x: hidden; /* 禁止內部元素超出 */
+    white-space: normal; /* 讓文字自動換行 */
+}
+
+.table-responsive {
+    overflow-x: auto; /* 讓表格在小螢幕時可左右滑動 */
+    max-width: 100%;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    width: 100%;
+    background-color:#8d9fb3 !important;
+    text-align: center;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.footer-content {
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
