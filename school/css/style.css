@@ -1074,6 +1074,62 @@ button {
     font-weight: bold;
 }
 
+/* 學校組附註區塊 */
+.school-note {
+  width: 90%;
+  margin: 20px auto;
+  font-size: 20px;
+  line-height: 2;
+  color: #333;
+}
+
+/* 主清單：使用 (一)(二)... */
+.school-note-numbering {
+    font-family: 'Microsoft JhengHei', sans-serif;  
+  list-style: none;
+  counter-reset: school-counter;
+  padding-left: 0;
+}
+
+.school-note-numbering > li {
+  counter-increment: school-counter;
+  position: relative;
+  margin: 1em 0;
+  padding-left: 3em;
+  font-weight: bold;
+}
+
+.school-note-numbering > li::before {
+  content: "(" counter(school-counter, cjk-ideographic) ") ";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* 讓點與文字水平對齊，改用原生項目符號 */
+.school-sub-list {
+      font-weight:normal;
+  list-style: disc;              /* 使用黑點 */
+  list-style-position: outside;  /* 點在內容外側，與文字水平對齊 */
+  padding-left: 1.5rem;          /* 控制左縮排 */
+  margin: .2rem 0 0 0;
+}
+
+/* 清掉先前的 ::before 絕對定位設定 */
+.school-sub-list > li {
+  position: static;
+  padding-left: 0;
+  margin: .45em 0;
+  line-height: 2;
+}
+
+/* 調整黑點尺寸與顏色 */
+.school-sub-list > li::marker {
+  font-size: 1em;   /* 想再小可改 0.55em/0.5em */
+  color: #000;
+}
+
+
 /* 子清單：使用 (i)(ii)(iii)... */
 .sub-numbering {
     list-style: none;
