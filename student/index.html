@@ -495,9 +495,115 @@
                     </div>
                     <section class="process">
                         <div class="process-item">
-                            <h3 class="phase-title text-center">親師生閱讀登記平台</h3>
-                            <p>學生、教師及家長上傳閱讀資料、填寫回饋表單、討論閱讀狀況，請使用官方寄發之專屬帳號與密碼登入平台。</p>
+                            <h3 class="phase-title text-center">成果繳交方式</h3>
+                            <p>活動期間須繳交「學生閱讀過程階段」及「家校閱讀過程階段」成果資料兩次，包含閱讀登記、照片與影片上傳、回饋表單填寫以及閱讀狀況討論，均使用「親師生閱讀登記平台」。進行登錄上傳。學生、家長、班級導師之個人專屬平台帳號與密碼將於報名成功後寄發。</p>
                             <p><a href="https://www.readingfortomorrow.org/vora.php" target="_blank">https://www.readingfortomorrow.org/vora.php</a></p>
+                            <!-- 只影響此表格的局部樣式 -->
+                            <style>
+                                .checklist-wrap {
+                                    overflow-x: auto;
+                                }
+                                
+                                .checklist-table {
+                                    border-collapse: separate;
+                                    /* 為了做出外框加粗 */
+                                    border-spacing: 0;
+                                    width: 100%;
+                                    text-align: center;
+                                    outline: 2px solid #000;
+                                    /* 外框粗線（像 Word 外框） */
+                                }
+                                
+                                .checklist-table th,
+                                .checklist-table td {
+                                    border: 1px solid #000;
+                                    /* 內部格線 */
+                                    padding: 8px 10px;
+                                    vertical-align: middle;
+                                    line-height: 1.6;
+                                    word-break: keep-all;
+                                    white-space: normal;
+                                }
+                                /* 左邊直式欄位 */
+                                
+                                .v-rl {
+                                    writing-mode: vertical-rl;
+                                    /* 垂直直排 */
+                                    text-orientation: upright;
+                                    letter-spacing: .2em;
+                                    font-weight: 700;
+                                    width: 0;
+                                    /* 讓寬度依內容自適應（直排較窄） */
+                                }
+                                /* 小字的繳交時間 */
+                                
+                                .note {
+                                    font-size: 0.9em;
+                                }
+                                /* 表格標題（與 Word 相同置中） */
+                                
+                                .checklist-caption {
+                                    text-align: center;
+                                    font-weight: 700;
+                                    margin: 14px 0 6px;
+                                }
+                            </style>
+
+                            <h5 class="checklist-caption">繳交資料檢核表</h5>
+                            <div class="checklist-wrap">
+                                <table class="checklist-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 6%;"></th>
+                                            <!-- 左上角空格，與 Word 版面一致 -->
+                                            <th style="width: 34%;">必繳資料</th>
+                                            <th style="width: 15%;">學生</th>
+                                            <th style="width: 22%;">家長</th>
+                                            <th style="width: 23%;">班級導師</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 學生閱讀過程階段（直排，跨兩列） -->
+                                        <tr>
+                                            <td class="v-rl" rowspan="2">學生閱讀過程階段</td>
+                                            <td>閱讀登記<br><span class="note">［繳交時間］每月月底</span></td>
+                                            <td>每月<br>至少10次</td>
+                                            <td>－</td>
+                                            <td>－</td>
+                                        </tr>
+                                        <tr>
+                                            <td>上傳說書影片<br><span class="note">［繳交時間］每月月底</span></td>
+                                            <td>每月<br>至少1部</td>
+                                            <td>－</td>
+                                            <td>－</td>
+                                        </tr>
+
+                                        <!-- 家校閱讀過程階段（直排，跨三列） -->
+                                        <tr>
+                                            <td class="v-rl" rowspan="3">家校閱讀過程階段</td>
+                                            <td>拍攝閱讀照片<br><span class="note">［繳交時間］每月月底</span></td>
+                                            <td>－</td>
+                                            <td>每週至少1張家庭閱讀照片</td>
+                                            <td>
+                                                每週至少1張班級MSSR照片<br> 每月至少1張師生聊書照片
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>填寫家校評語回饋表單<br><span class="note">［繳交時間］每學期期末</span></td>
+                                            <td>－</td>
+                                            <td>每學期1次</td>
+                                            <td>每學期1次</td>
+                                        </tr>
+                                        <tr>
+                                            <td>討論學生閱讀狀況<br><span class="note">［繳交時間］每學期期末</span></td>
+                                            <td>－</td>
+                                            <td>每學期與班級導師討論1次</td>
+                                            <td>每學期與家長討論1次</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                         <div class="process-item">
                             <h3 class="phase-title text-center">學生閱讀過程階段</h3>
@@ -538,9 +644,8 @@
                                 <ol class="process-numbering">
                                     <li>家庭閱讀照片 </li>
                                     <p style="text-indent: 0em; padding-left: 1.5rem;">
-                                        家長每週拍攝至少1張家庭閱讀照片，照片請標註「週間家庭閱讀」、「週末家庭閱讀」或「隨處閱讀」。 說明：本活動所稱的隨處閱讀，是指在學校教室、圖書館以及家庭住所以外之公共場域進行閱讀。例如：大眾運輸交通工具、餐廳、診所、大賣場等。
-
-                                    </p>
+                                        家長每週拍攝至少1張家庭閱讀照片，照片請標註「週間家庭閱讀」、「週末家庭閱讀」或「隨處閱讀」。
+                                        <br>說明：本活動所稱的隨處閱讀，是指在學校教室、圖書館以及家庭住所以外之公共場域進行閱讀。例如：大眾運輸交通工具、餐廳、診所、大賣場等。 </p>
                                     <li>填寫回饋表單</li>
                                     <p style="text-indent: 0em; padding-left: 1.5rem;">
                                         每學期期末填寫1次「家校評語回饋表單」。
@@ -584,6 +689,12 @@
                         <img src="img/第二階段流程.png" class="evaluate-img clickable-img img-thumbnail" alt="成果評量" data-bs-toggle="modal" data-bs-target="#imageModal" style="max-width: 75%; height: auto; display: block;"><br>
                     </div>
                     <section class="evaluate">
+                        <div class="evaluate-item">
+                            <h3 class="phase-title text-center">審查</h3>
+                            <ol class="sub-evaluate">
+                                <li>依參加者提交該年度執行之成果，由主辦單位組織之審查委員會進行審查。</li>
+                            </ol>
+                        </div>
                         <div class="evaluate-item">
                             <h3 class="phase-title text-center">學生閱讀過程評量</h3>
                             <ol class="sub-evaluate">
@@ -1045,28 +1156,29 @@
                             <div class="apply-item">
                                 <h5 class="phase-title text-center">報名時間</h5>
                                 <p>
-                                    114年09月01日( 星期一 )至114年09月30日（星期二）下午5時止。主辦單位將依報名優先順序及報名表件進行審核，並於五個工作天內寄發報名成功通知信。
+                                    即日起至114年09月30日（星期二）下午5時止。主辦單位將依報名優先順序及報名表件進行審核，並於五個工作天內寄發報名成功通知信。
                                 </p>
                             </div>
                             <div class="apply-item">
-                                <h5 class="phase-title text-center">參加資格</h5>
+                                <h5 class="phase-title text-center">報名資格</h5>
                                 <p>
-                                    全國各國民小學學校二年級至六年級學生<br>
+                                    開放全臺公私立國民小學二年級至六年級在學學生申請（包含附設國民小學、國民中學之國小部、高級中學之國小部），惟須以學生、家長（監護人）、班級導師三人一組報名參加。每位班級導師至多指導兩名學生。<br>
                                 </p>
                             </div>
                             <div class="apply-item">
-                                <h5 class="phase-title text-center">活動費用</h5>
+                                <h5 class="phase-title text-center">認證等級</h5>
                                 <!-- <ol>
                                 <li>本活動每位學生<span class="bold">新台幣1,000元</span>整。
                                 <li>過程階段中途退出或未通過者，予以退費新台幣300元整。
                                 <li>持有清寒證明或中低收入戶證明者，免收報名費。
                             </ol> -->
-                                <p>本屆「明日閱讀習慣及家校閱讀博覽會」為首次試辦，故暫不收取費用。</p>
+                                <p>本活動設有5等級閱讀認證，分別為【國小二年級】、【國小四年級】、【國小六年級】、【國中級】、【高中級】，學生可依自身閱讀能力，擇一等級報名參加。
+                                    <br> [例]四年級學生評估自身閱讀能力後，可選擇報名四年級等級，或六年級等級，或國中等級認證。 </p>
                             </div>
                             <div class="apply-item">
                                 <h5 class="phase-title text-center">參加方式</h5>
                                 <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-                                    <img src="img/報名流程圖.png" style="max-width: 80%; height: auto; display: block;"><br>
+                                    <img src="img/閱讀認證架構圖.pptx - PowerPoint 2025_9_1 下午 09_05_44.png" style="max-width: 80%; height: auto; display: block;"><br>
                                 </div>
                                 <ol>
                                     <li>
