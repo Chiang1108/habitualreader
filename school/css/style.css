@@ -1096,13 +1096,13 @@ button {
   position: relative;
   margin: 1em 0;
   padding-left: 3em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .school-note-numbering > li::before {
   content: "(" counter(school-counter, cjk-ideographic) ") ";
   position: absolute;
-  left: 0;
+  left: 1rem;
   font-weight: bold;
 }
 
