@@ -1282,7 +1282,7 @@ button {
 .apply-item ol ol {
     list-style: none;
     counter-reset: second-level;
-    padding-left: 2.5em;
+    padding-left: 0.1em;
     font-size: 18px; /* 次層清單稍小 */
 }
 
