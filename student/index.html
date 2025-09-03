@@ -112,10 +112,11 @@
                 border-collapse: separate;
                 /* 為了做出外框加粗 */
                 border-spacing: 0;
-                width: 80%;
                 text-align: center;
                 outline: 2px solid #000;
                 /* 外框粗線（像 Word 外框） */
+                table-layout: fixed;   /* 關鍵 */
+                width: 80%;            /* 你原來就有，保留或調整都可 */
             }
             
             .checklist-table th,
@@ -125,8 +126,9 @@
                 padding: 8px 10px;
                 vertical-align: middle;
                 line-height: 1.6;
-                word-break: keep-all;
                 white-space: normal;
+                word-break: break-word;      /* 取代原本的 keep-all */
+                overflow-wrap: anywhere;     /* 需要時強制換行 */
             }
             /* 左邊直式欄位 */
             
@@ -179,7 +181,7 @@
                                 <div class="news-date">2025/09/01</div>
                                 <div class="news-content">
                                     <ul>
-                                        <li style="list-style-type: none;">「第二屆明日閱讀習慣暨家校共讀博覽會」學校認證已開始受理報名，更多活動資訊詳見【實施項目】。</li>
+                                        <li style="list-style-type: none;">「第二屆明日閱讀習慣暨家校共讀博覽會」個人認證已開始受理報名，更多活動資訊詳見【實施項目】。</li>
                                     </ul>
                                 </div>
 
@@ -208,16 +210,7 @@
                             </div>
                     </section>
 
-                    <section class="related-activities">
-                        <div class="section-title">親師生閱讀登記平台</div>
-                        <div class="related-activities-content">
-                            <ul>
-                                <li>閱讀登記系統與資料上傳平台：
-                                    <a href="https://www.readingfortomorrow.org/vora.php" target="_blank">中華明日閱讀協會</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+
 
                     <section class="important-dates">
                         <div class="section-title">重要日程</div>
@@ -225,23 +218,36 @@
                             <!-- 報名日期 -->
                             <div class="date-item">
                                 <div class="date-title">報名日期</div>
-                                <div class="date-content">114年09月1日（一）至<br> 09月30日（二）下午5時止</div>
+                                <div class="date-content">114年09月01日（一）至<br> 114年09月30日（二）下午5時止</div>
                             </div>
 
                             <!-- 過程階段 -->
                             <div class="date-item">
                                 <div class="date-title">過程階段</div>
                                 <ul style="line-height:2">
-                                    <li class="fs-5" style="list-style-type: none;">第一學期：114年9月至115年1月</li>
-                                    <li class="fs-5" style="list-style-type: none;">第二學期：115年2月至115年6月</li>
+                                    <li class="fs-5" style="list-style-type: none;">第一學期：114年09月至115年01月</li>
+                                    <li class="fs-5" style="list-style-type: none;">第二學期：115年02月至115年06月</li>
                                 </ul>
                             </div>
 
                             <!-- 評量階段 -->
                             <div class="date-item">
                                 <div class="date-title">評量階段</div>
-                                <div class="date-content">預計於115年8月進行實體面談。</div>
+                                <div class="date-content">預計於115年08月進行實體面談</div>
                             </div>
+                        </div>
+                    </section>
+                    <section class="related-activities">
+                        <div class="section-title">親師生閱讀登記平台</div>
+                        <div class="related-activities-content">
+                            <ul>
+                                <li>個人認證活動資料登錄平台：
+                                    <a href="https://www.readingfortomorrow.org/vora.php" target="_blank">
+                                        <button class="apply-btn ">親師生閱讀登記平台</button>
+                                    </a>
+                                </li>
+
+                            </ul>
                         </div>
                     </section>
 
@@ -538,9 +544,9 @@
                     <!-- ==============================過程====================================== -->
                     <div class="tab-pane fade" id="pills-process" role="tabpanel" aria-labelledby="pills-process-tab">
                         <div class="topbar">
-                            <h4>過程階段</h4>
+                            <h4>個人認證</h4>
                             <hr>
-                            <h5>「學生閱讀過程階段」與「家校閱讀過程階段」，說明如下：</h5>
+                            <p style="font-size: x-large; font-weight: bold;">過程階段</p>
                         </div>
                         <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
                             <img src="img/第一階段流程.png" class="process-img clickable-img img-thumbnail" alt="過程評量" data-bs-toggle="modal" data-bs-target="#imageModal" style="max-width: 75%; height: auto; display: block;"><br>
@@ -551,10 +557,11 @@
                                 <h5 class="item-title ">學生</h5>
                                 <ol class="process-numbering">
                                     <li> 閱讀書籍並登記 </li>
-                                    <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                    <p style="text-indent: 0em; ">
                                         學生須於活動期間
                                         <span style="color: red; font-weight: bolder;">
-                                        完成閱讀
+                                            完成閱讀
+                                        </span>
                                         <span>
                                             <a href="#" id="toReadingPlan" class="rdnum fw-bold" 
                                             style="text-decoration: underline; text-decoration-thickness:0.3rem;;">
@@ -563,21 +570,23 @@
                                              之「核心書籍」、「選讀書籍」、「自選書籍」
                                             </span>
                                         </span> ，並透過「親師生閱讀登記平台」完成閱讀登記，每月至少登記10次。
-                                        </span>書目列表詳見活動官網。
+                                        
 
                                     </p>
                                     <li>學生說書影片 </li>
-                                    <P style="text-indent: 0em; padding-left: 1.5rem;">
+                                    <p style="text-indent: 0em; ">
                                         <span style="color: red; font-weight: bold;">每月上傳至少1部學生說書影片</span>。可由學生自拍，或家長、班級導師協助拍攝。影片規格規定如下:
-                                        <ol>
-                                            <li>影片須上傳至Youtube，並擷取代碼上傳至「親師生閱讀登記平台」</li>
-                                            <li>影片時長為1分鐘至1分30秒</li>
-                                            <li>影片格式以YouTube支援（MP4、MOV、WMV等）為主</li>
-                                            <li>全程橫拍且720p以上解析度</li>
-                                            <li>以國語為主，無字幕及特效</li>
-                                            <li>學生須露臉並清晰呈現書籍封面，但不得直接拍攝書頁內容</li>
-                                        </ol>
-                                    </P>
+                                        <div style="font-size: medium; padding-left: 2rem;">
+                                            <ol style="list-style: disc;">
+                                                <li>影片須上傳至Youtube，並擷取代碼上傳至「親師生閱讀登記平台」</li>
+                                                <li>影片時長為1分鐘至1分30秒</li>
+                                                <li>影片格式以YouTube支援（MP4、MOV、WMV等）為主</li>
+                                                <li>全程橫拍且720p以上解析度</li>
+                                                <li>以國語為主，無字幕及特效</li>
+                                                <li>學生須露臉並清晰呈現書籍封面，但不得直接拍攝書頁內容</li>
+                                            </ol>
+                                        </div> 
+                                    </p>
                                 </ol>
                             </div>
 
@@ -589,7 +598,8 @@
                                         <li>家庭閱讀照片 </li>
                                         <p style="text-indent: 0em; padding-left: 1.5rem;">
                                             家長每週拍攝至少1張家庭閱讀照片，照片請標註「週間家庭閱讀」、「週末家庭閱讀」或「隨處閱讀」。
-                                            <br>說明：本活動所稱的隨處閱讀，是指在學校教室、圖書館以及家庭住所以外之公共場域進行閱讀。</p>
+                                            （本活動所稱的隨處閱讀，是指在學校教室、圖書館以及家庭住所以外之公共場域進行閱讀。）
+                                        </p>
                                         <li>填寫回饋表單</li>
                                         <p style="text-indent: 0em; padding-left: 1.5rem;">
                                             每學期期末填寫1次「家校評語回饋表單」。
@@ -620,24 +630,33 @@
                             </div>
                             <div class="process-item">
                                 <h3 class="phase-title text-center">親師生閱讀登記平台</h3>
-                                <p style="text-align: justify; text-indent:0;">活動期間須繳交「學生閱讀過程階段」及「家校閱讀過程階段」成果資料兩次，包含閱讀登記、照片與影片上傳、回饋表單填寫以及閱讀狀況討論，均使用「親師生閱讀登記平台」。進行登錄上傳。學生、家長、班級導師之個人專屬平台帳號與密碼將於報名成功後寄發。</p>
-                                <P>
+                                <p style="text-align: justify; text-indent:0;">
+                                    活動期間須繳交「學生閱讀過程階段」及「家校閱讀過程階段」成果資料兩次，包含閱讀登記、照片與影片上傳、回饋表單填寫以及閱讀狀況討論，均使用「親師生閱讀登記平台」。進行登錄上傳。學生、家長、班級導師之個人專屬平台帳號與密碼將於報名成功後寄發。
+                                </p>
+                                <!-- <P> -->
                                     <a href="https://www.readingfortomorrow.org/vora.php" target="_blank">
-                                        <button class="apply-btn ">親師生閱讀登記平台</button>
+                                        <button class="process-btn ">親師生閱讀登記平台</button>
                                     </a>
-                                </P>
+                                <!-- </P> -->
 
                                 <h5 class="checklist-caption">繳交資料檢核表</h5>
                                 <div class="checklist-wrap">
                                     <table class="checklist-table  ">
+                                        <colgroup>
+                                            <col style="width:6%;">   <!-- 空白直排欄 -->
+                                            <col style="width:40%;">  <!-- 必繳資料：← 加大這欄 -->
+                                            <col style="width:18%;">  <!-- 學生 -->
+                                            <col style="width:18%;">  <!-- 家長 -->
+                                            <col style="width:18%;">  <!-- 班級導師 -->
+                                        </colgroup>
                                         <thead>
                                             <tr>
-                                                <th style="width: 6%;"></th>
+                                                <th ></th>
                                                 <!-- 左上角空格，與 Word 版面一致 -->
-                                                <th style="width: 34%;">必繳資料</th>
-                                                <th style="width: 15%;">學生</th>
-                                                <th style="width: 22%;">家長</th>
-                                                <th style="width: 23%;">班級導師</th>
+                                                <th >必繳資料</th>
+                                                <th >學生</th>
+                                                <th >家長</th>
+                                                <th >班級導師</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -688,50 +707,50 @@
                     <!-- ==============================評量====================================== -->
                     <div class="tab-pane fade" id="pills-evaluate" role="tabpanel" aria-labelledby="pills-evaluate-tab">
                         <div class="topbar">
-                            <h4>評量階段</h4>
+                            <h4>個人認證</h4>
                             <hr>
-                            <h6>「過程階段」結束後，進行「評量階段」：</h6>
-                            <h6>「評量階段」包括「學生閱讀過程評量」、「學生閱讀成果評量」與「家校閱讀過程評量」。</h6>
+                            <p style="font-size: x-large; font-weight: bold;">評量階段</p>
                         </div>
 
                         <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-                            <img src="img/第二階段流程.png" class="evaluate-img clickable-img img-thumbnail" alt="成果評量" data-bs-toggle="modal" data-bs-target="#imageModal" style="max-width: 75%; height: auto; display: block;"><br>
+                            <img src="img/第二階段流程.png" class="evaluate-img clickable-img img-thumbnail" alt="成果評量" data-bs-toggle="modal" data-bs-target="#imageModal" style="max-width: 60%; height: auto; display: block;"><br>
                         </div>
                         <section class="evaluate">
                             <div class="evaluate-item">
                                 <h3 class="phase-title text-center">審查</h3>
-                                <ol class="sub-evaluate">
-                                    <li>依參加者提交該年度執行之成果，由主辦單位組織之審查委員會進行審查。</li>
-                                </ol>
+                                <p>
+                                    依參加者提交該年度執行之成果，由主辦單位組織之審查委員會進行審查。
+                                </p>
                             </div>
                             <div class="evaluate-item">
                                 <h3 class="phase-title text-center">學生閱讀過程評量</h3>
-                                <ol class="sub-evaluate">
-                                    <li>依據「學生閱讀過程階段」成果資料，進行網路審查。</li>
-                                </ol>
+                                <p>
+                                    依據「學生閱讀過程階段」成果資料，進行網路審查。
+                                </p>
                             </div>
                             <div class="evaluate-item">
                                 <h3 class="phase-title text-center">學生閱讀成果評量</h3>
-                                <ol class="sub-evaluate">
-                                    <li>如通過「學生閱讀過程評量」審查，則進行面談審查。
-                                        <br>說明：面談審查採實體方式進行，僅辦理一場次，預計於115年8月擇一週末舉辦，地點在國立中央大學。如因故不克出席，則視同自動放棄面談資格。 </ol>
+                                <p>
+                                    如通過「學生閱讀過程評量」審查，則進行面談審查。面談審查採實體方式進行，僅辦理一場次，預計於115年08月擇一週末舉辦，地點在國立中央大學。如因故不克出席，則視同自動放棄面談資格。
+                                </p>
                             </div>
                             <div class="evaluate-item">
                                 <h3 class="phase-title text-center">家校閱讀過程評量</h3>
-                                <ol class="sub-evaluate">
-                                    <li>如通過「學生閱讀成果評量」審查，則依據「家校閱讀過程階段」成果資料，進行網路審查。</li>
-                                </ol>
+                                <p>
+                                    如通過「學生閱讀成果評量」審查，則依據「家校閱讀過程階段」成果資料，進行網路審查。
+                                </p>
+                                </p>
                             </div>
                             <div class="evaluate-item">
                                 <h3 class="phase-title text-center">表揚</h3>
+                                <p>經審查通過者，將於「明日閱讀日」成果表揚記者會公開表揚，授予認證證書。</p>
                                 <ol class="sub-evaluate">
-                                    <p>經審查通過者，將於「明日閱讀日」成果表揚記者會公開表揚，授予認證證書。</p>
                                     <li>
                                         「學生閱讀過程評量」及「學生閱讀成果評量」審查均通過，授予學生【明日博覽群書證書】乙幀。
                                     </li>
                                     <li>
                                         「家校閱讀過程評量」審查通過，授予班級導師及家長【明日家校閱讀證書】各乙幀。
-                                    </li><br>
+                                    </li>
                                 </ol>
                             </div>
                         </section>
@@ -1175,83 +1194,57 @@
                                     </p>
                                 </div>
                                 <div class="apply-item">
-                                    <h5 class="phase-title text-center">認證等級</h5>
+                                    <h5 class="phase-title text-center ">認證等級</h5>
                                     <!-- <ol>
                                 <li>本活動每位學生<span class="bold">新台幣1,000元</span>整。
                                 <li>過程階段中途退出或未通過者，予以退費新台幣300元整。
                                 <li>持有清寒證明或中低收入戶證明者，免收報名費。
                             </ol> -->
-                                    <p>本活動設有5等級閱讀認證，分別為【國小二年級】、【國小四年級】、【國小六年級】、【國中級】、【高中級】，學生可依自身閱讀能力，擇一等級報名參加。
-                                        <br> [例]四年級學生評估自身閱讀能力後，可選擇報名四年級等級，或六年級等級，或國中等級認證。 </p>
+                                    <p>本活動設有5等級閱讀認證，分別為【國小二年級】、【國小四年級】、【國小六年級】、【國中級】、【高中級】，學生可依自身閱讀能力，擇一等級報名參加。[例]四年級學生評估自身閱讀能力後，可選擇報名四年級等級，或六年級等級，或國中等級認證。 </p>
                                 </div>
                                 <div class="apply-item">
                                     <h5 class="phase-title text-center">參加方式</h5>
                                     <div style="display: flex; justify-content: center; align-items: center; width: 80%; margin: 1rem auto;">
-                                        <img src="/student/img/報名流程圖.png" style="max-width: 100%; height: auto; display: block;" alt="報名流程圖">
+                                        <img src="/student/img/報名流程圖.png" style="max-width: 100%; height: auto; display: block; padding-bottom: 2rem;" alt="報名流程圖">
                                     </div>
-                                    <ol>
-
+                                    <ol class="apply-numbering">
                                         <li>
-                                            <span style="font-weight: bold;">報名方式：</span> 一律採網路報名，有意參加者請填寫線上報名表單。
-                                            <br> 報名時需一併上傳 「學生個人正面照片」、「著作權、肖像權暨個人資料授權同意書」、「導師推薦表」及「校長行政配合同意書」。
-                                            <br><br>
+                                            <span style="font-weight: bold;">報名方式：</span> 一律採網路報名，有意參加者請填寫線上報名表單。報名時需一併上傳 「學生個人正面照片」、「著作權、肖像權暨個人資料授權同意書」、「導師推薦表」及「校長行政配合同意書」。
+                                            <br>
                                             <a href="https://forms.gle/5oTwepSKkYcmapM6A" target="_blank">
-                                                <button class="apply-btn">報名表單</button>
+                                                <button class="apply-btn" >報名表單</button>
                                             </a>
                                         </li>
                                         <li>
-                                            如有任何問題，請洽活動聯絡人：彭小姐<br>電話：(03)422-7151轉35405<br>E-mail：ptsreading@cl.ncu.edu.tw </li>
-
-
-                                        <!-- <li>請匯款至「中華明日閱讀協會」帳戶：<br>
-                                            戶名：社團法人中華明日閱讀協會<br>
-                                            <span class="bold">郵局帳號：(700)02810940194697</span><br>
-                                            註：完成匯款後，請於線上報名表單提供匯款帳號末五碼及匯款日期。
-                                        </li> -->
-                                        <!-- <li>請填寫線上報名表單，並上傳學生個人正面照片、著作權授權暨個人資料提供同意書、導師推薦表、校長行政配合同意書。<br>
-                                                <span class="text-left mt-3" style="padding: 0.2rem;">                                
-                                                <a href="" target="">
-                                                    <button class="apply-btn">報名截止</button>
-                                                </a>
-                                            </span>
-                                            </li>
-                                            <li>主辦單位將依據報名優先順序及應備文件進行審核，依序錄取，並於七個工作天內寄發報名成功通知信件。</li> -->
-                                    </ol>
-                                    </li>
-                                    <li>
-                                        <span style="font-weight: bold;">聯絡方式：</span>
-                                        <ol>
-                                            <ul>聯絡人：彭小姐</ul>
-                                            <ul>電話：(03)422-7151分機35405</ul>
-                                            <ul>E-mail：<a href="mailto:PTSreading@cl.ncu.edu.tw">PTSreading@cl.ncu.edu.tw</a></ul>
-                                        </ol>
-                                    </li>
-                                    </ol>
+                                            如有任何問題，請洽活動聯絡人：彭小姐<br>電話：(03)422-7151轉35405<br>E-mail：ptsreading@cl.ncu.edu.tw 
+                                        </li>
+                                    </ol>    
                                 </div>
                                 <div class="apply-item">
-                                    <h5 class="phase-title text-center">報名表單</h5>
-                                    <ol>
-                                        於線上報名前，請先備妥以下表單：
+                                    <h5 class="phase-title text-center">報名表件</h5>
+                                    <p>報名前請先備妥以下表件：</p>
+                                    <ol style="list-style-type: disc;">
+                                        
                                         <li>著作權授權暨個人資料提供同意書
-                                            <a href="pdf/明日閱讀習慣及家校閱讀博覽會_著作權授權暨個人資料提供同意書.pdf" target="_blank">
+                                            <a href="pdf/個人認證_著作權授權同意書_v0901.pdf" target="_blank">
                                                 <button class="form-btn">下載</button>
                                             </a>
                                         </li>
                                         <li>導師推薦表
-                                            <a href="pdf/明日閱讀習慣及家校閱讀博覽會_導師推薦表.pdf" target="_blank">
+                                            <a href="pdf/個人認證_導師推薦表_v0901.pdf" target="_blank">
                                                 <button class="form-btn">下載</button>
                                             </a>
                                         </li>
                                         <li>校長行政配合同意書
-                                            <a href="pdf/明日閱讀習慣及家校閱讀博覽會_校長行政配合同意書.pdf" target="_blank">
+                                            <a href="pdf/個人認證-校長行政配合同意書_v0829.pdf" target="_blank">
                                                 <button class="form-btn">下載</button>
                                             </a>
                                         </li>
                                     </ol>
                                 </div>
                                 <div class="apply-item">
-                                    <h5 class="phase-title text-center">注意事項</h5>
-                                    <ol>
+                                    <h5 class="phase-title text-center" style="padding-bottom: 2rem;">注意事項</h5>
+                                    <ol class="apply-numbering">
                                         <li>報名資料如有不實或有涉及任何違反社會善良風俗或法令之行為，主辦單位有權取消其報名者資格，並保留相關損失之法律追訴權。</li>
                                         <li>主辦單位保留隨時修改、變更、暫停或終止本活動內容之權利，並公告於活動網站。</li>
                                         <li>本活動依簡章辦理，如有未盡事宜，主辦單位得隨時補充之。</li>

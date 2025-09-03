@@ -366,9 +366,9 @@ section {
 
 .date-item {
     flex: 1;
-    min-width: 300px;
+    min-width: 0;
     /* 確保區塊寬度一致 */
-    max-width: 500px;
+    max-width: none;
     /* 限制最大寬度，避免過寬 */
     background: #f9f9f9;
     padding: 20px;
@@ -384,7 +384,7 @@ section {
 
 .date-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     /* 小螢幕時自動換行 */
     justify-content: space-between;
     gap: 20px;
@@ -552,12 +552,10 @@ section {
 
 .related-activities-content ul li {
     font-size: 22px;
-    /* 放大字體 */
     line-height: 2.2;
-    /* 增加行高 */
-    padding-left: 1.5em;
-    /* 增加左邊距讓內容更易讀 */
-    position: relative;
+    display: flex;           /* 讓圖示與文字同行 */
+    align-items: center;     /* 垂直置中 */
+    gap: 0.5em;              /* 圖示與文字間距 */
 }
 
 
@@ -565,12 +563,9 @@ section {
 
 .related-activities-content ul li::before {
     content: "🔗";
-    /* 使用連結符號強調 */
-    position: absolute;
-    left: 0;
     font-size: 22px;
     color: #004080;
-    /* 與標題一致 */
+    position: static;        /* ❌ 不要用 absolute，跟文字同排 */
 }
 
 @media (max-width: 768px) {
@@ -1291,35 +1286,64 @@ button {
 
 .process-item p {
     font-size: 18px;
-    color: #333;
+    color: #000000;
     text-indent: 2rem;
     margin: 1% 5%;
+}
+
+.process-btn {
+
+    margin: 0.5rem auto;    /*自動左右置中，上下保留 20px 間距 */
+    background-color: #6B8496;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* padding: 10px 20px; */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    /* display: inline-block; */
+    /* 讓按鈕不撐滿整行 */
+    text-align: center;
+    width: auto;
+    /* 按鈕寬度根據內容大小調整 */
+    /* margin: 10px 0; */
+    /* 保持適當間距 */
+    text-decoration: none !important;  /* 確保按鈕本身也不會有底線 */
+    display: block;
+}    
+a .process-btn, 
+a:link .process-btn, 
+a:visited .process-btn {
+    text-decoration: none !important;
 }
 
 
 /* 主清單：第一、第二、第三... */
 
 .process-numbering {
-    font-size: 20px;
+    font-size: 1.5rem;
     /* 確保比 .item-title 小 */
     list-style: none;
     counter-reset: process-counter;
-    padding-left: 4rem;
+    padding: 0rem 1rem 0rem 1rem;
     line-height: 1.8;
-    margin: 3% auto;
+    margin: 1% 3%;
 }
 
 .process-numbering>li {
+
     counter-increment: process-counter;
     position: relative;
-    padding-left: 1.5rem;
-    margin: 1% 5%;
+    padding-left: -4rem;
+    /* margin: 1% 3%; */
 }
 
 .process-numbering>li::before {
-    content: counter(process-counter, cjk-ideographic) "、";
-    position: absolute;
-    left: -2em;
+    content:"（" counter(process-counter, cjk-ideographic) "）" "、";
+    position: relative;
+    /* padding-left:-0rem; */
     font-weight: bold;
 }
 
@@ -1558,25 +1582,25 @@ button {
 /* 子清單：使用黑色實心圓點 ● */
 
 .sub-evaluate {
-    list-style: none;
+    list-style: disc;
     counter-reset: sub-counter;
-    padding-left: 0rem;
+    padding-left: 2.5rem;
     line-height: 1.8;
     font-size: 20px;
-    margin: 1%;
+    margin: 1% 3%;;
 }
 
 .sub-evaluate>li {
     counter-increment: sub-counter;
     position: relative;
-    padding-left: 1rem;
+    padding: 0.5rem 0 0.5rem 0;
 }
 
 .sub-evaluate>li::before {
     /* content: "●"; */
     font-size: 0.5em;
     color: black;
-    padding-right: 1rem;
+    padding-right: 0;
 }
 
 
@@ -2269,7 +2293,6 @@ button {
 .apply-item p,
 .apply-item li {
     font-size: 20px;
-    /* 與 process 相同 */
     line-height: 1.8;
     color: #333;
     margin: 1% 5%;
@@ -2279,51 +2302,68 @@ button {
 
 /* ✅ 主清單：一、二、三... */
 
-.apply-item ol {
+/* .apply-item ol {
     list-style-type: cjk-ideographic;
     padding-left: 2.5em;
     margin-top: 1rem;
     counter-reset: first-level;
     font-size: 20px;
-    /* 與 process 相同 */
 }
 
-
-/* ✅ 第一層清單 */
 
 .apply-item ol>li {
     counter-increment: first-level;
     font-size: 20px;
-    /* 與 process 相同 */
 }
 
 
-/* ✅ 第二層清單：（一）、（二）、（三）... */
 
 .apply-item ol ol {
     list-style: none;
     counter-reset: second-level;
     padding-left: 2.5em;
     font-size: 18px;
-    /* 次層清單稍小 */
 }
 
 .apply-item ol ol>li {
     counter-increment: second-level;
     position: relative;
     padding-left: 2em;
-    /* 避免與內容重疊 */
     list-style-type: none;
     font-size: 18px;
-    /* 與次層清單統一 */
 }
 
 .apply-item ol ol>li::before {
     content: "（" counter(second-level, cjk-ideographic) "）、 ";
     position: absolute;
     left: -2em;
-    font-size: 18px;
-    /* 確保標號與內容大小一致 */
+    font-size: 18px; */
+/* } */
+/* 活動報名區塊（除報名表件外）用 （一）、（二）... */
+.apply-numbering {
+    list-style: none;              /* 移除原本數字/一、 */
+    counter-reset: apply-counter;  /* 從 1 開始 */
+    margin: 1% 5%;                 /* 與 .apply-item p 對齊 */
+    padding-left: 0;               /* 不額外縮排 */
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.apply-numbering > li {
+    counter-increment: apply-counter;
+    position: relative;
+    padding-left: 5rem;             /* 讓文字對齊段落 */
+    text-indent: 0;
+    margin: .6em 0;
+}
+
+.apply-numbering > li::before {
+    content: "（" counter(apply-counter, cjk-ideographic) "）、";
+    position: absolute;
+    left: 0; top: 0;
+    width: 3em;                    /* 和 padding-left 相同，確保對齊 */
+    text-align: right;
+    font-weight: bold;
 }
 
 
