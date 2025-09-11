@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明日閱讀習慣暨家校共讀博覽會</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    header {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    
+    .primary-header {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+    
+    .secondary-header {
+        position: sticky;
+        top: 130px;
+        /* Adjust based on height of primary header */
+        z-index: 1020;
+    }
+    
+    @media (max-width: 576px) {
+        .secondary-header {
+            top: 115px;
+            /* Smaller devices */
+        }
+    }
+    
+    @media (min-width: 577px) and (max-width: 991px) {
+        .secondary-header {
+            top: 119px;
+            /* Medium devices */
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .secondary-header {
+            top: 128px;
+            /* Larger devices */
+        }
+    }
+</style>
+
+<body class="d-flex flex-column min-vh-100" style="margin-top: 0;">
+    <div class="wrapper flex-grow-1" style="margin-top: 0;">
+        <!-- Header -->
+        <header class="primary-header bg-dark pt-3" style="color: yellow; font-size: 46px;">
+            <div class="container text-center">
+                <div class="h1 fw-bold">「閱讀習慣運動」</div>
+                <div class="h4 fw-bold mt-3 pb-3" style="margin-bottom: 0;">學校帶動家庭，建立閱讀紙本書籍習慣以取代手機育兒</div>
+            </div>
+        </header>
+
+        <header class="secondary-header" style="background-color: #8db39f;">
+            <div class="d-flex align-items-center w-100">
+                <!-- 標題圖 -->
+                <div class="logo-container me-3">
+                    <a href="#" id="logo-link">
+                        <img src="img/閱讀認證標題圖 個人.png" alt="活動標題" class="img-fluid">
+                    </a>
+                </div>
+                <!-- 桌機版導覽列（大於 lg），置於同一列 -->
+                <nav class="nav nav-pills flex-row d-none d-lg-flex">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">首頁</button>
+                    <button class="nav-link" id="pills-certification-tab" data-bs-toggle="pill" data-bs-target="#pills-certification" type="button" role="tab" aria-controls="pills-certification" aria-selected="false">理念</button>
+                    <!-- <button class="nav-link" id="pills-law-tab" data-bs-toggle="pill" data-bs-target="#pills-law" type="button" role="tab" aria-controls="pills-law" aria-selected="false">實施辦法</button> -->
+                    <button class="nav-link" id="pills-process-tab" data-bs-toggle="pill" data-bs-target="#pills-process" type="button" role="tab" aria-controls="pills-process" aria-selected="false">過程階段</button>
+                    <button class="nav-link" id="pills-evaluate-tab" data-bs-toggle="pill" data-bs-target="#pills-evaluate" type="button" role="tab" aria-controls="pills-evaluate" aria-selected="false">評量階段</button>
+                    <!-- <button class="nav-link" id="pills-competition-tab" data-bs-toggle="pill" data-bs-target="#pills-competition" type="button" role="tab" aria-controls="pills-competition" aria-selected="false">表揚</button> -->
+                    <button class="nav-link" id="pills-book-tab" data-bs-toggle="pill" data-bs-target="#pills-book" type="button" role="tab" aria-controls="pills-book" aria-selected="false">書目架構</button>
+                    <button class="nav-link" id="pills-apply-tab" data-bs-toggle="pill" data-bs-target="#pills-apply" type="button" role="tab" aria-controls="pills-apply" aria-selected="false">活動報名</button>
+                    <a href="https://habitualreader.readingfortomorrow.org/school/index.html" target="_blank" class="nav-link">學校認證</a>
+                </nav>
+                <!-- 漢堡選單按鈕（僅手機顯示） -->
+                <button class="menu-btn d-lg-none btn btn-light ms-auto" onclick="toggleMenu()">☰</button>
+            </div>
+            <!-- 手機版選單（點擊漢堡選單按鈕後呈現）-->
+            <nav id="mobile-menu" class="nav nav-pills flex-column text-center d-none">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home">首頁</button>
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-certification">理念</button>
+                <!-- <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-law">實施辦法</button> -->
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-process">過程階段</button>
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-evaluate">評量階段</button>
+                <!-- <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-competition">表揚</button> -->
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-book">書目架構</button>
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-apply">活動報名</button>
+                <a href="https://habitualreader.readingfortomorrow.org/school/index.html" target="_blank" class="nav-link">學校認證</a>
+            </nav>
+        </header>
+        <style>
+            .checklist-wrap {
+                overflow-x: auto;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                padding-bottom: 3rem;
+                padding-top: 2rem;
+            }
+            
+            .checklist-table {
+                border-collapse: separate;
+                /* 為了做出外框加粗 */
+                border-spacing: 0;
+                text-align: center;
+                outline: 2px solid #000;
+                /* 外框粗線（像 Word 外框） */
+                table-layout: fixed;
+                /* 關鍵 */
+                width: 80%;
+                /* 你原來就有，保留或調整都可 */
+            }
+            
+            .checklist-table th,
+            .checklist-table td {
+                border: 1px solid #000;
+                /* 內部格線 */
+                padding: 8px 10px;
+                vertical-align: middle;
+                line-height: 1.6;
+                white-space: normal;
+                word-break: break-word;
+                /* 取代原本的 keep-all */
+                overflow-wrap: anywhere;
+                /* 需要時強制換行 */
+            }
+            /* 左邊直式欄位 */
+            
+            .v-rl {
+                writing-mode: vertical-rl;
+                /* 垂直直排 */
+                text-orientation: upright;
+                letter-spacing: .2em;
+                font-weight: 700;
+                width: 0;
+                /* 讓寬度依內容自適應（直排較窄） */
+            }
+            /* 小字的繳交時間 */
+            
+            .note {
+                font-size: 0.9em;
+            }
+            /* 表格標題（與 Word 相同置中） */
+            
+            .checklist-caption {
+                text-align: center;
+                font-weight: 700;
+                margin: 14px 0 6px;
+            }
+        </style>
+
+
+        <div class=" d-flex justify-content-center p-3">
+            <div class="marquee ">
+                <div class="marquee-content">
+                    閱讀習慣取代沉迷3C習慣 &emsp;並帶來： 巨量廣博閱讀&emsp;&emsp;大量知識取得&emsp;&emsp; 提升學習表現&emsp;&emsp;厚植氣質品德&emsp;&emsp;&emsp; 但必須： 家庭閱讀&emsp;&emsp;學校閱讀&emsp;&emsp;家庭與學校合作閱讀
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="container-fluid px-0">
+            <div class="tab-content" id="pills-tabContent">
+                <!-- ===============================首頁========================================= -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <section class="news-section">
+                        <div class="section-title">最新消息</div>
+                        <div class="news-list">
+                            <!-- <div class="news-item">
+                                <div class="news-date">2025/08/20</div>
+                                <div class="news-content">
+                                </div>
+                            </div> -->
+                            <div class="news-item">
+                                <div class="news-date">2025/09/01</div>
+                                <div class="news-content">
+                                    <ul>
+                                        <li style="list-style-type: none;">「第二屆明日閱讀習慣暨家校共讀博覽會」個人認證已開始受理報名，更多活動資訊詳見【實施項目】。</li>
+                                    </ul>
+                                </div>
+
+                                <!-- <div class="news-item">
+                                <div class="news-date">2025/04/01</div>
+                                <div class="news-content">
+                                    <ul>
+                                        <li>選讀書單已公布，請至【書目架構】->【書籍地圖】中查詢所有書籍詳細資訊。</li>
+                                        <li>親師生閱讀登記平台已開放於<a href="https://www.readingfortomorrow.org/vora.php" target="_blankS">中華明日閱讀協會</a>網站</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="news-item">
+                                <div class="news-date">2025/02/20</div>
+                                <div class="news-content">
+                                    <ul>
+                                        <li>「明日閱讀習慣及家校閱讀博覽會」正式開跑，報名時間自即日起至 3/31（一）中午 12 時止，名額有限，請儘速報名。</li>
+                                        <li>核心書單已公布，請至【書目架構】->【書籍地圖】中查詢核心書籍詳細資訊。選讀書單預計於4/1公布於本證賽官網。</li>
+                                        <li>閱讀登記系統、資料上傳平台預計於4/1開放於中華明日閱讀協會網站。</li>
+                                    </ul>
+                                </div>
+                            </div> -->
+
+                            </div>
+                    </section>
+
+
+
+                    <section class="important-dates">
+                        <div class="section-title">重要日程</div>
+                        <div class="date-container">
+                            <!-- 報名日期 -->
+                            <div class="date-item">
+                                <div class="date-title">報名日期</div>
+                                <div class="date-content">自114年09月01日（一）至<br> 114年09月30日（二）下午5時止</div>
+                            </div>
+
+                            <!-- 過程階段 -->
+                            <div class="date-item">
+                                <div class="date-title">過程階段</div>
+                                <div class="date-content">每一學年認證一次<br>自114年09月01日至115年06月30日止</div>
+                                <!-- <ul style="line-height:2">
+                                    <li class="fs-5" style="list-style-type: none;">每一學年認證一次</li>
+                                    <li class="fs-5" style="list-style-type: none;">自114年09月01日至115年06月30日止</li>
+                                </ul> -->
+                            </div>
+
+                            <!-- 評量階段 -->
+                            <div class="date-item">
+                                <div class="date-title">評量階段</div>
+                                <div class="date-content">預計於115年08月進行實體面談</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="related-activities">
+                        <div class="section-title">親師生閱讀登記平台</div>
+                        <div class="related-activities-content">
+                            <ul>
+                                <li>個人認證活動資料登錄平台：
+                                    <a href="https://www.readingfortomorrow.org/vora.php" target="_blank">
+                                        <button class="apply-btn ">親師生閱讀登記平台</button>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </section>
+
+
+                    <section class="related-activities">
+                        <div class="section-title">相關活動連結</div>
+                        <div class="related-activities-content">
+                            <ul>
+                                <li>明日說書人博覽會：
+                                    <a href="https://booktalkers.readingfortomorrow.org/" target="_blank">官方網站</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="host-section">
+                        <div class="section-title">辦理單位</div>
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <!-- 第一個辦理單位 -->
+                            <div class="unit-container">
+                                <img src="img/明日閱讀協會.png" alt="明日閱讀協會" class="unit-image">
+                                <p class="unit-text">社團法人中華明日閱讀協會</p>
+                                <!-- 圖片下方的文字 -->
+                            </div>
+
+                            <!-- 第二個辦理單位 -->
+                            <div class="unit-container">
+                                <img src="img/中央大學.png" alt="國立中央大學" class="unit-image">
+                                <p class="unit-text">國立中央大學</p>
+                                <!-- 圖片下方的文字 -->
+                            </div>
+                        </div>
+
+                    </section>
+                    </div>
+                    <!--============================== 證賽理念 =====================================-->
+                    <div class="tab-pane fade" id="pills-certification" role="tabpanel" aria-labelledby="pills-certification-tab">
+                        <div class="topbar">
+                            <h4>理念</h4>
+                            <hr>
+                        </div>
+                        <section class="certification-idea">
+                            <div class="certification-idea-content">
+                                <div class="vertucal-text lh-lg">
+                                    <h1>閱讀習慣運動</h1>
+                                    <h3>學校帶動家庭，建立閱讀紙本書籍習慣以取代手機育兒</h3>
+                                    <p><br></p>
+                                    <p>
+                                        因應數位時代教育的挑戰，國立中央大學推動「閱讀習慣運動」，以取代手機育兒。經過十多年推廣，台灣已有2,000多所國中小學參與「明日閱讀」計畫。在此基礎上，國立中央大學協同「中華明日閱讀協會」，正試辦「明日閱讀習慣博覽會」，從「明日閱讀1.0」演進為「明日閱讀2.0」，期以深化閱讀文化，培養學生長期穩定的閱讀紙本書習慣，為未來社會培育具備深度思維與知識力的新世代公民。
+                                    </p>
+                                    <p>
+                                        數位媒體早已無所不在<span class="dash">—</span>在家裡、學校、辦公室、車上，甚至在皮包與口袋裡。
+                                        <!--
+                                    -->長時間盯著螢幕，既入迷又順從，不僅主宰了成人的生活，也因難以抗拒將手機交給孩子以安撫他們、讓他們安靜，結果手機也主宰了孩子的學習。
+                                    </p>
+                                    <p>
+                                        中央大學國家講座教授陳德懷長期從事AI與網路輔助教學的研究，並持續關注科技對人類學習所帶來的正負面影響。
+                                        <!--
+                                    -->他指出，科技已成為有效且不可或缺的學習工具，例如，有目的地進行網路搜尋、專題研究或資料調查，都需要仰賴網路資源；
+                                        <!--
+                                    -->同時，AI教學系統亦迅速發展，其輔導能力已有接近真人教師水準的潛力。然而，長時間使用數位媒體所造成的負面影響日益嚴重，已不容忽視。
+                                    </p>
+                                    <p>
+                                        根據政府委託2022年的「網路沉迷研究調查報告」，台灣青少年在非上學日的平均每日上網時間為6小時以上，而在上學日則為4.4小時。
+                                        <!--
+                                    -->換算每週高達34小時以上，約為一般成人每週40小時的標準工作時間的八分之七。主要的上網活動集中在社交媒體、短影音平台與線上遊戲等。
+                                    </p>
+                                    <p>
+                                        兒福聯盟2021年的一項調查指出，高達62.5%的國小至高中生出現疑似「網路社交焦慮」，且超過一半曾遭受網路霸凌的學生情緒受到明顯影響，其中有26.0%曾一度產生自傷念頭。
+                                        <!--
+                                    -->有研究指出，數位成癮與焦慮、憂鬱等心理問題常常共存。事實上，兒少心理健康議題已成為全球性的公共衛生危機。
+                                        <!--
+                                    -->根據衛生福利部最新統計，2009年至2023年間，14歲以下兒少自殺通報人次由208人次大幅增加至3,365人次，15年來成長達16倍。
+                                    </p>
+                                    <p>
+                                        至於閱讀方面，長時間大量投入螢幕，已使孩子難以專注並完整閱讀一本書。
+                                        <!--
+                                    -->在螢幕上閱讀文字時，閱讀行為往往呈現跳躍式進行，而非由左到右、由上到下的連貫閱讀，而是快速捲動、掃視，只尋找感興趣的片段資訊。大量研究已證實，螢幕閱讀不僅削弱了深度閱讀與理解的能力，也明顯影響專注力的持續性，
+                                        <!--
+                                    -->以及知識的記憶與長期保留。
+                                    </p>
+                                    <p>
+                                        遠見《未來Family》2017年的調查也發現，孩子每週的閱讀時間僅有4.4小時（現在可能更少），甚至比每一天花在上網的時間還少。
+                                        <!--
+                                    -->另外，國外一項研究指出，兒童的腦部網絡連結會隨閱讀時間增加而增強，隨螢幕使用時間增加而減弱。
+                                        <!--
+                                    -->腦部網絡連結代表知識的取得，因此，閱讀多，知識增多；螢幕多，知識減少。這與我們期望孩子在成長過程中「增添知識」的目標恰恰相反。
+                                        <!--
+                                    -->教育是否正進入「膚淺」的年代？孩子是否正在變得越來越「笨」？正如卡爾在其經典著作《網路讓我們變笨？》中所警示的那樣。
+                                    </p>
+                                    <p>
+                                        陳德懷教授指出，讓手機成為育兒工具，可能正是現代孩子所面臨的最大威脅，父母應該有意識地優先保護孩子的大腦健康與認知發展。負面的網路經驗可能成為孩子成長過程中的巨大風險。「父母不會讓孩子隨便獨自走入暗黑街頭，但現在的網路就充滿了險惡的街頭。」他補充說。
+                                    </p>
+                                    <p>
+                                        此外，陳德懷教授也提及去年刊登在《大西洋月刊》的一篇文章〈那些無法閱讀書籍的頂尖大學生〉。文中提到，「以前的學生可以看很多本書，但在過去10年間，許多學生進入大學時<span class="dash">—</span>即便是頂尖名校的學生<span class="dash">—</span>根本沒有具備完整閱讀書籍的能力。」
+                                    </p>
+                                    <p>
+                                        陳教授也指出，對於孩子的學習，多項研究顯示，與螢幕閱讀比較（包含平板與電子閱讀器），紙本閱讀展現出無可取代的優勢<span class="dash">—</span>提升注意力、深化理解、鞏固記憶，奠定扎實的知識與語言基礎，讓學習更有效。而螢幕閱讀中常見的分心、淺閱讀、眼睛疲勞、記憶不牢固等問題，皆可能阻礙學習成效。 </p>
+                                    <p>
+                                        「在需要深度理解與長期記憶的學習中，傳統紙本閱讀仍是最可靠、最有效的選擇。隨著教育持續數位化，我們應審慎權衡，在課堂與自學中維持紙本閱讀的核心地位，同時輔以適當的數位工具，才能讓學習者既享科技之便，又不失認知深度，真正達成良好的學習效果。」陳教授補充。
+                                    </p>
+                                    <p>
+                                        陳德懷教授提出「少量螢幕時間教育」，英文稱為 Screenfew Education的觀念。他認為需要推廣這個觀念，因為無論在學校或家庭中，數位裝置應僅作為學習工具，並應訂定明確且嚴謹的使用規範，以確保科技的應用回歸支持學習，而非侵蝕學習的本質。
+                                        <!--
+                                    -->儘管某些學習活動無法完全排除數位工具，教育工作者仍應時時警覺，不需使用螢幕時，應避免使用。因此，他鼓勵多採用實體桌遊等非螢幕學習方式，或使用無螢幕裝置，例如無螢幕的實體機器人。
+                                    </p>
+                                    <p>
+                                        此外，陳教授強調，要幫助孩子遠離螢幕沉迷，並支持他們健康學習與成長，必須走兩條路：
+                                        <ol>
+                                            <li><strong>以紙本取代螢幕，以閱讀紙本書習慣取代螢幕習慣</strong>。透過家庭與學校攜手推動閱讀紙本書籍，培養孩子穩定且持續的閱讀習慣，讓他們自然減少對數位媒體的依賴；</li>
+                                            <li><strong>多親近實體世界</strong>。積極提供孩子參與各種遊戲、戶外活動與運動的機會，讓身體活動與實體世界成為生活的一部分。</li>
+                                        </ol>
+                                    </p>
+                                    <p>
+                                        陳教授指出，常見的生活場景中，例如：孩子在家空閒時，或外出與家長一同乘坐高鐵、在餐廳等候用餐、在診所候診，或在露營期間的空檔，手上拿著的，大多是手機。
+                                        <!--
+                                    -->然而，在陳教授與同仁多年前推動實驗教育而成立的「趣創者國際實驗教育機構」中（圖一），孩子們拿著的不是手機，而是紙本書。他們是熱愛閱讀的書迷，能隨時隨地沉浸於書本的世界中（圖二）。
+                                    </p>
+                                    <div style="text-align: center; margin: 2em 0;">
+                                        <img src="img/圖一.png" alt="圖一說明" style="max-width: 80%; height: auto;">
+                                        <p style="text-align: center; margin-top: 0.5em; font-size: 18px; font-family: 'DFKai-SB','KaiTi',serif;">
+                                            <strong>圖一、</strong>「趣創者國際實驗教育機構」培養出一批熱愛閱讀的學生
+                                        </p>
+                                    </div>
+                                    <div class="container text-center my-4">
+                                        <div class="row g-4">
+                                            <!-- 第一列 -->
+                                            <div class="col-md-4">
+                                                <img src="img/高鐵.png" class="img-fluid" alt="高鐵" style="max-height: 250px; object-fit: cover;">
+                                                <p class="mt-2" style="font-family: 'DFKai-SB','KaiTi',serif;">在搭高鐵</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="img/好事多.png" class="img-fluid" alt="好市多" style="max-height: 250px; object-fit: cover;">
+                                                <p class="mt-2" style="font-family: 'DFKai-SB','KaiTi',serif;">在好市多</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="img/露營.png" class="img-fluid" alt="露營" style="max-height: 250px; object-fit: cover;">
+                                                <p class="mt-2" style="font-family: 'DFKai-SB','KaiTi',serif;">在露營</p>
+                                            </div>
+
+                                            <!-- 第二列 -->
+                                            <div class="col-md-4">
+                                                <img src="img/理髮.png" class="img-fluid" alt="圖四" style="max-height: 250px; object-fit: cover;">
+                                                <p class="mt-2" style="font-family: 'DFKai-SB','KaiTi',serif;">在理髮時</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="img/候機.png" class="img-fluid" alt="圖五" style="max-height: 250px; object-fit: cover;">
+                                                <p class="mt-2" style="font-family: 'DFKai-SB','KaiTi',serif;">在候機室</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="img/度假.png" class="img-fluid" alt="圖六" style="max-height: 250px; object-fit: cover;">
+                                                <p class="mt-2" style="font-family: 'DFKai-SB','KaiTi',serif;">度假時</p>
+                                            </div>
+                                        </div>
+                                        <p style="text-align: center; margin-top: 0.5em; font-size: 18px; font-family: 'DFKai-SB','KaiTi',serif;">
+                                            <strong>圖二、</strong>閱讀習慣是在學校與家庭之外也能看見的風景
+                                        </p>
+                                    </div>
+                                    <p>
+                                        該機構成立的核心目標正是培養學生閱讀紙本書的習慣。
+                                        <!--
+                                    -->他指出，一旦建立閱讀習慣，學生閱讀書籍的數量便會隨時間持續增加；在老師或家長適當引導下，閱讀內容也會逐漸加深加廣，進而博覽群書，大量吸收知識。
+                                        <!--
+                                    -->持續而廣泛的閱讀，不僅促進知識累積，也深化思維與邏輯推理、豐富情感，並促進人格的健全發展。該實驗教育機構的高年級（小學）學生，已有能力閱讀多本國中至高中程度的書籍。 「量變帶來質變」，學生的學習表現常有大幅進步，甚至出現超齡表現（附錄）。
+                                    </p>
+                                    <p>
+                                        為什麼閱讀習慣重要？陳教授認同一本書的作者說法：個人經驗無法支撐在複雜世界做出判斷，需要大量閱讀書籍，獲取豐富知識及其他人的經驗作為基礎，才有足夠推理能力做出正確判斷。
+                                        <!--
+                                    -->不閱讀數百本對自身有幫助的書，就是功能性文盲。
+                                    </p>
+                                    <p>
+                                        陳教授指出，以目前傳統學校的閱讀量，絕對不足以應對未來世界的需求。
+                                        <!--
+                                    -->唯有透過「巨量廣博閱讀」，才能在AI時代快速變遷的社會中發揮認知優勢、定位自我，理解生活與工作的意義，並體認其對個人、家庭與社會的價值。
+                                        <!--
+                                    -->他補充說，人們還必須能與他人及AI共同創造知識，而這一切都須以巨量且廣博的知識作為根基，而這正有賴於終身閱讀紙本書的習慣養成。
+                                    </p>
+                                    <p>
+                                        「明日閱讀習慣暨家校共讀博覽會」旨在推廣由實驗教育機構發展的進階版明日閱讀<span class="dash">—</span>「明日閱讀2.0」<span class="dash">—</span>至其他學校。
+                                        <!--
+                                    -->鼓勵教師與家長合作，引導學生對閱讀紙本書產生興趣，並透過以身作則<span class="dash">—</span>一種最有效的方式<span class="dash">—</span>帶動孩子閱讀紙本書，再結合聊書、薦書與說書等交流活動，重新建構與深化閱讀過的內容，並拓展閱讀視野。
+                                        <!--
+                                    -->此外，活動強調過程與結果並重。我們重視過程：持續閱讀紙本書以培養閱讀習慣的過程；同時也重視最終成果：學生閱讀紙本書習慣的建立。
+                                    </p>
+                                    <p>
+                                        紙本書閱讀習慣的建立，家庭角色比學校角色更為重要，讓學校帶動家庭閱讀的風氣至為關鍵。
+                                        <!--
+                                    -->正如《失控的焦慮世代》作者海德特提醒家長的：「這是一段關係，你做的事，往往比你說的話影響更深，因此請檢視自己的手機使用習慣。做個好榜樣，不要一邊滑手機，一邊敷衍孩子。」
+                                    </p>
+                                    <p>
+                                        陳德懷教授提醒，建立閱讀習慣必須「三要」：要身教、要興趣、要習慣；「三不要」：不光說、不3C、不衝量。
+                                    </p>
+                                    <p>
+                                        「放下手機，拿起書本，博覽群書，與智慧同行，走向世界！」這是陳教授的期許。
+                                    </p>
+                                    <p style="text-indent: 0%;">
+                                        <em>附錄：實驗教育機構的學生畢業後，家長對我們的理念給予許多的肯定！有兩封學生就讀國一的時候，家長寄來的信，孩子的表現讓家長與老師都覺得難以置信。</em>
+                                    </p>
+                                    <hr>
+                                    <div class="file" style="text-indent: 0%;">
+                                        <a href="pdf/理念附錄.pdf" target="_blank" class="file-link">附錄：兩封家長的來信</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- ==============================實施辦法===================================== -->
+                    <!-- <div class="tab-pane fade" id="pills-law" role="tabpanel" aria-labelledby="pills-law-tab"> -->
+                    <!-- <div class="topbar">
+                        <h4>實施辦法</h4>
+                        <hr>
+                    </div> -->
+                    <!-- <section class="law">
+                    <div class="law-item">
+                        <div class="law-intro-block">
+                            <p style="font-weight: bold; padding-top: 2rem;">「明日閱讀習慣及家校閱讀博覽會」每學年舉辦一次：</p>
+                        </div>
+                        <div class="law-intro">
+                            <ol class="law-numbering"> -->
+                    <!-- <li>
+                    <span class="bold">「參加者」：</span><br> 本活動以一位學生、該生家長，以及該生導師三人作為一個組合參加，我們稱之為「參加者」。
+                </li>
+                <li>
+                    <span class="bold">兩階段實施方式：</span><br> 實施方式分為兩階段，第一階段為「過程階段」，包含「學生閱讀過程階段」與「家校閱讀過程階段」， 結束後進行第二階段「評量階段」，包含「學生閱讀過程評量」、「學生閱讀成果評量」及「家校閱讀過程評量」。
+                </li>
+                <li>
+                    <span class="bold">「學生閱讀過程階段」與「家校閱讀過程階段」：</span><br> 「參加者」需於閱讀期間完成相關紀錄。（詳情請參閱
+                    <span>
+                                            <a href="#" id="toProcess" class="rdnum fw-bold" 
+                                            style="text-decoration: underline; text-decoration-thickness:0.15rem;;">
+                                            「過程階段」</a>
+                                        </span>）
+                </li> -->
+                    <!-- <li>
+                    <span class="bold">「學生閱讀過程評量」、「學生閱讀成果評量」與「家校閱讀過程評量」：</span><br>
+                    <ol class="sub-law-numbering-num">
+                        <li>
+                            「學生閱讀過程評量」：依據「學生閱讀過程階段」的紀錄，例如興趣與習慣等，進行評量。<br>
+                        </li>
+                        <li>
+                            「學生閱讀成果評量」：依據「學生閱讀過程階段」的紀錄，例如閱讀的書籍與內容等，進行面談評量。
+                        </li>
+                        <li>
+                            「家校閱讀過程評量」：依據「家校閱讀過程階段」的紀錄，例如家庭閱讀的緊密度等，進行評量。
+                        </li>
+                        （詳情參照
+                        <span>
+                                                    <a href="#" id="toEvaluate" class="rdnum fw-bold" 
+                                                    style="text-decoration: underline; text-decoration-thickness:0.15rem;;">
+                                                    「評量階段」</a>
+                                                </span>）
+                    </ol> -->
+                    <!-- </li>
+                                    <li> -->
+                    <!-- <span class="bold">多張認證：</span><br> 參加者最多可獲得三張認證。 -->
+                    <!-- <ol class="sub-law-numbering-num">
+                                            <li>
+                                                若學生通過「學生閱讀過程評量」，就可進行「學生閱讀成果評量」，即與審查老師實體面談，若通過可獲得「明日博覽群書證書」一張。
+                                            </li>
+                                            <li>
+                                                若學生獲得「明日博覽群書證書」，家長與老師即可獲得「家校閱讀過程評量」的審查資格，依據「家校閱讀過程階段」的紀錄， 若通過審查，家長與老師可各得「明日家校閱讀證書」一張。
+                                            </li>
+                                        </ol> -->
+                    <!-- <p class="sub-law-numbering-intro mt-3">
+                                            <strong>換言之，有三種可能：<br></strong>
+                                        </p> -->
+                    <!-- <ol class="sub-law-numbering">
+                                            <li><strong>沒有獲得認證</strong><br>學生在「學生閱讀過程評量」中沒有通過，或者通過「學生閱讀過程評量」，卻沒有通過「學生閱讀成果評量」</li>
+                                            <li><strong>獲得一張認證</strong><br>即只有學生獲得一張認證，學生通過「學生閱讀過程評量」與「學生閱讀成果評量」，但教師及家長沒有通過「家校閱讀過程評量」</li>
+                                            <li><strong>獲得三張認證</strong><br>即學生、家長與老師各獲得一張認證，學生通過「學生閱讀過程評量」與「學生閱讀成果評量」，教師及家長也通過「家校閱讀過程評量」</li>
+                                        </ol> -->
+                    <!-- </li> -->
+                    <!-- <li>
+                                        <span class="bold">活動包含認證與比賽：</span><br> 對於獲得三張認證的參加者，若獲得審查老師推薦參加比賽，可以進入比賽審查，若通過審查，
+                                       
+                                        學生可獲頒卓越獎、優秀獎，或潛力獎，以及圖書禮卷，家長、老師也各得獎狀乙張。
+                                    </li> -->
+                    <!-- </ol>
+                            </div> -->
+                    <!-- <div class="law-intro-block " style="padding-top: 2.0%;">
+                                            <ol class="sub-law-numbering">
+                                                本活動與其他活動不同之處： <br>
+                                                <li>參加者不只是學生，而是學生、家長與導師形成的組合，可獲多張認證。</li>
+                                                <li>重視過程與結果，因此有兩階段審查，掌握學生閱讀與家校合作過程。</li>
+                                                <li>認證通過後可參與比賽，進一步爭取更高的榮譽。</li>
+                                            </ol>
+                                            <p><strong><em>
+                                    主辦單位保留隨時修改、變更、暫停或終止本活動內容之權利，並公告於活動網站。
+                                </em></strong></p>
+                                        </div> -->
+                    <!-- </div>
+            </section>
+    </div> -->
+                    <!-- ==============================過程====================================== -->
+                    <div class="tab-pane fade" id="pills-process" role="tabpanel" aria-labelledby="pills-process-tab">
+                        <div class="topbar">
+                            <h4 style="font-size: 3rem; font-weight: bold;">個人認證</h4>
+                            <hr>
+                            <p style="font-size: 2.5rem; font-weight: bold;">過程階段</p>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <img src="img/第一階段流程.png" class="process-img clickable-img img-thumbnail" alt="過程評量" data-bs-toggle="modal" data-bs-target="#imageModal" style="max-width: 75%; height: auto; display: block;"><br>
+                        </div>
+                        <section class="process">
+                            <div class="process-item">
+                                <h3 class="phase-title text-center">學生閱讀過程階段</h3>
+                                <h5 class="item-title ">學生</h5>
+                                <ol class="process-numbering">
+                                    <li>
+                                        <strong>閱讀書籍並登記 </strong>
+                                    </li>
+                                    <p style="text-indent: 0em; ">
+                                        學生須於活動期間
+                                        <span style="color: red; font-weight: bolder;">
+                                            完成閱讀
+                                        </span>
+                                        <span>
+                                            <!-- 跳轉至書籍數量連結 -->
+                                            <a href="#" id="toReadingPlan" class="rdnum fw-bold" 
+                                            style="text-decoration: underline; text-decoration-thickness:0.3rem;;">
+                                            指定數量</a>
+                                            <span style="color: black; font-weight: normal;">
+                                             之「核心書籍」、「選讀書籍」、「自選書籍」
+                                            </span>
+                                        </span> ，並透過「親師生閱讀登記平台」完成閱讀登記，每月至少登記10次。
+
+                                    </p>
+                                    <li><strong>學生說書影片</strong></li>
+                                    <p style="text-indent: 0em; ">
+                                        <span style="color: red; font-weight: bold;">每月上傳至少1部學生說書影片</span>。可由學生自拍，或家長、班級導師協助拍攝。影片規格規定如下:
+                                        <div style="font-size: medium; padding-left: 2rem;">
+                                            <ol style="list-style: disc;font-size: 1.2em;">
+                                                <li>影片須上傳至Youtube，並擷取代碼上傳至「親師生閱讀登記平台」</li>
+                                                <li>影片時長為1分鐘至1分30秒</li>
+                                                <li>影片格式以YouTube支援（MP4、MOV、WMV等）為主</li>
+                                                <li>全程橫拍且720p以上解析度</li>
+                                                <li>以國語為主，無字幕及特效</li>
+                                                <li>學生須露臉並清晰呈現書籍封面，但不得直接拍攝書頁內容</li>
+                                            </ol>
+                                        </div>
+                                    </p>
+                                </ol>
+                            </div>
+
+                            <div class="process-item">
+                                <h3 class="phase-title text-center">家校閱讀過程階段</h3>
+                                <div class="process-item">
+                                    <h5 class="item-title">家長</h5>
+                                    <ol class="process-numbering">
+                                        <li><strong>家庭閱讀照片</strong></li>
+                                        <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                            家長每週拍攝至少1張家庭閱讀照片，照片請標註「週間家庭閱讀」、「週末家庭閱讀」或「隨處閱讀」。 （本活動所稱的隨處閱讀，是指在學校教室、圖書館以及家庭住所以外之公共場域進行閱讀。）
+                                        </p>
+                                        <li><strong>填寫回饋表單</strong></li>
+                                        <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                            每學期期末填寫1次「家校評語回饋表單」。
+                                        </p>
+                                        <li><strong>討論學生閱讀狀況</strong></li>
+                                        <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                            每學期期末與班級導師討論學生閱讀狀況1次。
+                                        </p>
+                                    </ol>
+                                </div>
+                                <div class="process-item">
+                                    <h5 class="item-title">班級導師</h5>
+                                    <ol class="process-numbering">
+                                        <li><strong>班級閱讀照片</strong> </li>
+                                        <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                            班級導師每週拍攝至少1張班級MSSR照片，每月拍攝至少1張師生聊書照片（導師可與班級中任一學生進行師生聊書）。
+                                        </p>
+                                        <li><strong>填寫回饋表單</strong></li>
+                                        <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                            每學期期末填寫1次「家校評語回饋表單」。
+                                        </p>
+                                        <li><strong>討論學生閱讀狀況</strong></li>
+                                        <p style="text-indent: 0em; padding-left: 1.5rem;">
+                                            每學期期末與家長討論學生閱讀狀況1次。
+                                        </p>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="process-item">
+                                <h3 class="phase-title text-center">親師生閱讀登記平台</h3>
+                                <p style="text-align: justify; text-indent:0;">
+                                    活動期間須繳交「學生閱讀過程階段」及「家校閱讀過程階段」成果資料兩次，包含閱讀登記、照片與影片上傳、回饋表單填寫以及閱讀狀況討論，均使用「親師生閱讀登記平台」。進行登錄上傳。學生、家長、班級導師之個人專屬平台帳號與密碼將於報名成功後寄發。
+                                </p>
+                                <!-- <P> -->
+                                <a href="https://www.readingfortomorrow.org/vora.php" target="_blank">
+                                    <button class="process-btn ">親師生閱讀登記平台</button>
+                                </a>
+                                <!-- </P> -->
+
+                                <h5 class="checklist-caption">繳交資料檢核表</h5>
+                                <div class="checklist-wrap">
+                                    <table class="checklist-table  ">
+                                        <colgroup>
+                                            <col style="width:6%;">
+                                            <!-- 空白直排欄 -->
+                                            <col style="width:40%;">
+                                            <!-- 必繳資料：← 加大這欄 -->
+                                            <col style="width:18%;">
+                                            <!-- 學生 -->
+                                            <col style="width:18%;">
+                                            <!-- 家長 -->
+                                            <col style="width:18%;">
+                                            <!-- 班級導師 -->
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <!-- 左上角空格，與 Word 版面一致 -->
+                                                <th>必繳資料</th>
+                                                <th>學生</th>
+                                                <th>家長</th>
+                                                <th>班級導師</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- 學生閱讀過程階段（直排，跨兩列） -->
+                                            <tr>
+                                                <td class="v-rl" rowspan="2">學生閱讀過程階段</td>
+                                                <td><strong>閱讀登記</strong><br><span class="note" style="color:red;">［繳交時間］每月月底</span></td>
+                                                <td>每月<br>至少10次</td>
+                                                <td>－</td>
+                                                <td>－</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>上傳說書影片</strong><br><span class="note" style="color:red;">［繳交時間］每月月底</span></td>
+                                                <td>每月<br>至少1部</td>
+                                                <td>－</td>
+                                                <td>－</td>
+                                            </tr>
+
+                                            <!-- 家校閱讀過程階段（直排，跨三列） -->
+                                            <tr>
+                                                <td class="v-rl" rowspan="3">家校閱讀過程階段</td>
+                                                <td><strong>拍攝閱讀照片</strong><br><span class="note" style="color:red;">［繳交時間］每月月底</span></td>
+                                                <td>－</td>
+                                                <td>每週至少1張家庭閱讀照片</td>
+                                                <td>
+                                                    每週至少1張班級MSSR照片<br> 每月至少1張師生聊書照片
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>填寫家校評語回饋表單</strong><br><span class="note" style="color:red;">［繳交時間］每學期期末</span></td>
+                                                <td>－</td>
+                                                <td>每學期1次</td>
+                                                <td>每學期1次</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>討論學生閱讀狀況</strong><br><span class="note" style="color:red;">［繳交時間］每學期期末</span></td>
+                                                <td>－</td>
+                                                <td>每學期與班級導師討論1次</td>
+                                                <td>每學期與家長討論1次</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <!-- ==============================評量====================================== -->
+                    <div class="tab-pane fade" id="pills-evaluate" role="tabpanel" aria-labelledby="pills-evaluate-tab">
+                        <div class="topbar">
+                            <h4>個人認證</h4>
+                            <hr>
+                            <p style="font-size: x-large; font-weight: bold;">評量階段</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <img src="img/第二階段流程.png" class="evaluate-img clickable-img img-thumbnail" alt="成果評量" data-bs-toggle="modal" data-bs-target="#imageModal" style="max-width: 60%; height: auto; display: block;"><br>
+                        </div>
+                        <section class="evaluate">
+                            <div class="evaluate-item">
+                                <h3 class="phase-title text-center">審查</h3>
+                                <p>
+                                    依參加者提交該年度執行之成果，由主辦單位組織之審查委員會進行審查。
+                                </p>
+                            </div>
+                            <div class="evaluate-item">
+                                <h3 class="phase-title text-center">學生閱讀過程評量</h3>
+                                <p>
+                                    依據「學生閱讀過程階段」成果資料，進行網路審查。
+                                </p>
+                            </div>
+                            <div class="evaluate-item">
+                                <h3 class="phase-title text-center">學生閱讀成果評量</h3>
+                                <p>
+                                    如通過「學生閱讀過程評量」審查，則進行面談審查。面談審查採實體方式進行，僅辦理一場次，預計於115年08月擇一週末舉辦，地點在國立中央大學。如因故不克出席，則視同自動放棄面談資格。
+                                </p>
+                            </div>
+                            <div class="evaluate-item">
+                                <h3 class="phase-title text-center">家校閱讀過程評量</h3>
+                                <p>
+                                    如通過「學生閱讀成果評量」審查，則依據「家校閱讀過程階段」成果資料，進行網路審查。
+                                </p>
+                                </p>
+                            </div>
+                            <div class="evaluate-item">
+                                <h3 class="phase-title text-center">表揚</h3>
+                                <p>經審查通過者，將於「明日閱讀日」成果表揚記者會公開表揚，授予認證證書。</p>
+                                <ol class="sub-evaluate">
+                                    <li>
+                                        「學生閱讀過程評量」及「學生閱讀成果評量」審查均通過，授予學生【明日博覽群書證書】乙幀。
+                                    </li>
+                                    <li>
+                                        「家校閱讀過程評量」審查通過，授予班級導師及家長【明日家校閱讀證書】各乙幀。
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+                    </div>
+                    <!--===============================比賽================================================= -->
+                    <!-- <div class="tab-pane fade" id="pills-competition" role="tabpanel" aria-labelledby="pills-competition-tab">
+                        <div class="topbar">
+                            <h4>表揚</h4>
+                            <hr>
+                        </div>
+                        <section class="competition">
+                            <div class="competition-item">
+                                <p>經審查通過者，將於「明日閱讀日」成果表揚記者會公開表揚，授予認證證書。</p>
+
+                                <ol class="competition-numbering">
+                                    <li>「學生閱讀過程評量」及「學生閱讀成果評量」審查均通過者，授予學生
+                                        <strong>【明日博覽群書證書】</strong> 乙幀。
+                                    </li>
+
+                                    <li>「家校閱讀過程評量」審查通過者，授予班級導師及家長
+                                        <strong>【明日家校閱讀證書】</strong> 各乙幀。
+                                    </li>
+                                </ol>
+                            </div>
+                        </section> -->
+                    <!-- <section class="competition">
+                            <div class="competition-item">
+                                <ol class="competition-numbering">
+                                    <li><strong>參加資格</strong>：獲得「學生閱讀過程評量」、「學生閱讀成果評量」與「家校閱讀過程評量」共三張認證的參加者。
+                                        <li><strong>推薦階段</strong>：參加者如獲得評審老師推薦，則進入表揚審查。</li>
+                                        <li><strong>審查階段</strong>：經比賽審查評選，評選出卓越獎、優秀獎、潛力獎獲獎者。</li>
+                                </ol>
+
+                                <ol class="sub-competition">
+                                    <strong>獎項：</strong><br>學生可獲頒卓越獎、優秀獎，或潛力獎，以及圖書禮卷，家長、老師也各得獎狀乙張。
+                                    <li>卓越獎：4名，獎狀乙張，圖書禮券5,000元</li>
+                                    <li>優良獎：4名，獎狀乙張，圖書禮券3,000元</li>
+                                    <li>潛力獎：4名，獎狀乙張，圖書禮券1,000元</li>
+                                </ol>
+                            </div>
+                            </section> -->
+                    <!-- </div> -->
+                    <!--===============================書單================================================= -->
+                    <div class="tab-pane fade" id="pills-book" role="tabpanel" aria-labelledby="pills-book-tab">
+                        <div class="topbar">
+                            <h4>書目架構</h4>
+                            <hr>
+                            <!-- 新增按鈕 -->
+                            <ul class="nav nav-pills justify-content-center" id="readingTab">
+                                <li class="nav-item">
+                                    <button id="fieldBtn" class="nav-link active custom-tab-btn" data-bs-toggle="pill" data-bs-target="#field">
+                                    博覽群書
+                                </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button id="readingPlanBtn" class="nav-link  custom-tab-btn" data-bs-toggle="pill" data-bs-target="#readingPlan">
+                                    認證級別
+                                </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button id="certificationListBtn" class="nav-link custom-tab-btn" data-bs-toggle="pill" data-bs-target="#certificationList">
+                                    書籍地圖
+                                </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content">
+                            <!-- 博覽群書 -->
+                            <section class="tab-pane fade show active book" id="field">
+                                <div class="book-item">
+                                    <h5 class="phase-title text-center">博覽群書及三大領域介紹</h5>
+                                    <p>
+                                        為了有系統地幫助親師引導學生閱讀的書籍能兼顧廣度與深度，「明日閱讀習慣及家校閱讀博覽會」每屆依據教師與專家學者的建議， 更新
+                                        <strong>『書籍地圖』</strong>，作為親師生選書與閱讀規劃的參考依據。
+                                    </p>
+                                    <p>
+                                        『書籍地圖』如同課程地圖，必須具備明確的目標與完善的規劃。 透過
+                                        <strong>核心書種</strong>、<strong>選讀書種</strong>與<strong>自選書種</strong>的安排，為學生提供系統性且多元的閱讀指引，逐步拓展其閱讀視野。
+                                    </p>
+                                    <p>
+                                        為了讓閱讀涵蓋更廣泛的知識領域，達到「博覽群書」的目標，書籍依內容特質分為<strong>三「類」領域<span class="dash">—</span>
+                                    故事小說、科學技術、人文社會</strong>，以及專門歸納橫跨兩類或三類領域的書籍的<strong>第四類領域</strong><span class="dash">—</span><strong>「跨領域」</strong>。 培養學生多角度思考與知識連結的能力。以下是這四大類的簡要介紹：
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            <span class="bold">故事小說</span><br> 涵蓋童話、寓言、奇幻、推理等多元故事創作，細分為
+                                            <strong>溫馨勵志類別、冒險推理類別、神話寓言類別、科幻武俠類別</strong>。 此類書籍能激發想像力與同理心，讓讀者在角色與情節的推進中，體驗不同的人生觀與價值觀，同時培養語言表達與敘事理解力，提升對文字與創作的興趣。
+                                        </li>
+                                        <li>
+                                            <span class="bold">科學技術</span><br> 聚焦於自然科學、工程技術、數學、資訊科技等，細分為
+                                            <strong>工程技術類別、自然科學類別、生命科學類別、永續發展類別</strong>。 此類書籍強調邏輯性與實證性，幫助讀者理解世界運作原理，並透過實際應用與案例，培養科學探究精神與解決問題的能力，掌握環境、科技與未來趨勢，啟發創新思維。
+                                        </li>
+                                        <li>
+                                            <span class="bold">人文社會</span><br> 涵蓋人類社會、文化與思想，細分為
+                                            <strong>生活類別、藝術類別、社會類別、文學類別</strong>。 透過閱讀此領域書籍，讀者能培養多角度思考與批判能力，深入理解個人與群體、文化與歷史、價值與倫理，提升對世界的洞察力與人文素養。
+                                        </li>
+                                        <li>
+                                            <span class="bold">跨領域</span><br> 融合兩類或三類領域的書籍，例如以科學視角詮釋神話寓言，或探討溫馨勵志與社會議題如何相互影響。 透過跨領域閱讀，鼓勵讀者從多角度思考，並將不同領域的知識相互連結，形成更全面的認知視野，以應對未來日益多元且複雜的挑戰。
+                                        </li>
+                                    </ol>
+                                    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                                        <img src="img/領域大圖.png" style="max-width: 70%; height: auto; display: block;">
+                                    </div>
+                                    <h3 class="table-title text-center" style="margin-top: 0;">三類領域與跨領域</h3>
+                                    <table class="book-width-table  table-bordered text-center align-middle mx-auto" style="width: 90%; table-layout: auto;">
+                                        <h3 class="table-title text-center">書籍廣度：3類領域與12類別
+                                            <tr>
+                                                <th class="tech-header book-ch">科技類<br><span class="book-eng">Science & Technology</span></th>
+                                                <th class="story-header book-ch">故事類<br><span class="book-eng">Story & Fiction</span> </th>
+                                                <th class="humanity-header book-ch">人社類<br><span class="book-eng">Humanity & Social Study</span></th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <th class="tech-row book-ch">工程技術類別<br><span class="book-eng">Engineering & Technology</span> </th>
+                                                    <th class="story-row book-ch">溫馨勵志類別<br><span class="book-eng">Warm & Inspirational</span></th>
+                                                    <th class="humanity-row book-ch">生活類別<br> <span class="book-eng">Life</span></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="tech-row book-ch">自然科學類別<br><span class="book-eng">Natural Science</span> </th>
+                                                    <th class="story-row book-ch">冒險推理類別<br><span class="book-eng">Adventure & Reasoning</span></th>
+                                                    <th class="humanity-row book-ch">藝術類別<br><span class="book-eng">Art</span></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="tech-row book-ch">生命科學類別<br> <span class="book-eng">Life Science</span></th>
+                                                    <th class="story-row book-ch"> 神話寓言類別<br><span class="book-eng"> Myth & Fable</span> </th>
+                                                    <th class="humanity-row book-ch"> 社會類別<br><span class="book-eng">Social Study</span></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="tech-row book-ch">永續發展類別<br><span class="book-eng">Sustainable Development</span></th>
+                                                    <th class="story-row book-ch"> 科幻武俠類別<br> <span class="book-eng">Science Fiction & Martial Art</span> </th>
+                                                    <th class="humanity-row book-ch"> 文學類別<br><span class="book-eng"> Literature </span></th>
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                    <table class="table  table-bordered text-center align-middle mx-auto" style="width: 90%; table-layout: auto;">
+                                        <h3 class="table-title text-center">書籍深度：5等級深度</h3>
+                                        <thead>
+                                            <tr>
+                                                <th class="book-ch">繪本<br><span class="book-eng">Picture Book</span> </th>
+                                                <th class="book-ch">橋梁書<br><span class="book-eng">Bridge Book</span></th>
+                                                <th class="book-ch">初階文字書<br><span class="book-eng">First Text Book</span></th>
+                                                <th class="book-ch">中階文字書<br><span class="book-eng"> Middle Text Book</span> </th>
+                                                <th class="book-ch">高階文字書<br><span class="book-eng">High Text Book</span></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <p>
+                                        同時，為了符合不同年齡與閱讀能力，所有書籍依照難度分為五個等級：
+                                        <strong>繪本、橋梁書、初階文字書、中階文字書與高階文字書</strong>，確保學生能夠循序漸進地發展閱讀能力，從興趣閱讀邁向深度思考與知識探索。
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            <span class="bold">繪本</span><br> 適合剛接觸閱讀或需要圖文並茂輔助的讀者。 繪本以大量圖片與精簡文字進行敘事，多有注音，若文句簡單也可能無注音；字數約5000字以下，適讀年齡為國小低年級。 繪本有助於激發想像力、培養美感，也適合親子共讀，建立初步的閱讀興趣。
+                                        </li>
+                                        <li>
+                                            <span class="bold">橋梁書</span><br> 介於繪本與文字書之間的過渡讀物，文字量開始增多但仍保留一定插圖，可有注音或無注音； 字數約1萬字以上，適讀年齡為國小中年級。 橋梁書幫助讀者從圖像輔助轉向以文字為主的閱讀，同時維持趣味性與易讀性，協助學生逐步增進閱讀信心與流暢度。
+                                        </li>
+                                        <li>
+                                            <span class="bold">初階文字書</span><br> 文字比例明顯增多，插圖比例相對減少，注音不一定保留； 字數約5萬字以上，適讀年級為國小高年級。初階文字書內容較為豐富多元，可以進一步培養學生閱讀與獨立思考的能力。
+                                        </li>
+                                        <li>
+                                            <span class="bold">中階文字書</span><br> 文字量大幅增加，情節與內容深度也開始提升，字數大約6～10萬字，適讀年齡為國中。 此階段的閱讀更重視深度與廣度，主題可涵蓋知識性或思辨性內容，幫助讀者提升理解力、批判力與分析能力，也為高階文字書的閱讀與學習奠定基礎。
+                                        </li>
+                                        <li>
+                                            <span class="bold">高階文字書</span><br> 以文字為主的深度閱讀書籍，內容可包含較複雜的議題、較抽象的概念或更具挑戰性的語言結構，字數可達10萬字以上，適讀年齡為高中。 讀者需要具備一定的閱讀量與理解力，才能更有效地吸收書中資訊並進行思考，高階文字書的閱讀能進一步拓展讀者的知識深度與思維廣度。
+                                        </li>
+                                    </ol>
+                                    <!-- <p style="text-indent: 0;">
+                                    總結來說，「明日博覽群書家校閱讀認證與比賽」期望學生能在閱讀過程中達成以下目標：<br>
+                                    <ol>
+                                        <li><strong>廣泛閱讀，拓展視野與認識世界：</strong>
+                                            廣泛認識世界是教育的核心目標。透過多元閱讀，學生能深入理解自身環境，開拓視野，提升對社會與世界的認識。
+                                        </li>
+                                        <li><strong>深度閱讀，啟發思維並深化學問：</strong>
+                                            培養獨立思考、創造力與想像力，是迎接未來挑戰的關鍵能力。
+                                        </li>
+                                        <li><strong>博覽群書，增強知識整合與新知識吸收能力：</strong>
+                                            以博覽群書為目標，學生可涉略不同領域，發掘自身潛能。同時，豐富的背景知識有助於新知識的整合與應用，提升學習成效。
+                                        </li>
+                                        <li><strong>有規劃的閱讀，養成終身學習習慣：</strong>
+                                            終身學習者需有目標與規劃，以確保學習成效。培養規劃性閱讀習慣，有助於成為成功的終身閱讀者。透過核心書籍、選讀書籍與自選書籍，能有效建立穩定的閱讀習慣。
+                                        </li>
+                                    </ol>
+                                </p> -->
+                                </div>
+
+                            </section>
+
+                            <!-- 閱讀規劃（預設顯示） -->
+                            <section class="tab-pane fade show fade book" id="readingPlan">
+                                <div class="book-item ">
+                                    <h5 class="phase-title text-center">各等級書目程度說明</h5>
+                                    <p style="text-indent: 0;">
+                                        ◆&nbsp<strong>國小二年級等級：</strong>以國小二年級程度書籍為主，一年級難度書籍為輔；<br> ◆&nbsp
+                                        <strong>國小四年級等級：</strong>以國小四年級程度書籍為主，三年級難度書籍為輔；<br> ◆&nbsp
+                                        <strong>國小六年級等級：</strong>以國小六年級程度書籍為主，五年級難度書籍為輔；<br> ◆&nbsp
+                                        <strong>國中級等級：</strong>以國中二年級程度書籍為主，國中一、三年級難度書籍為輔；<br> ◆&nbsp
+                                        <strong>高中級等級：</strong>以高中二年級程度書籍為主，高中一、三年級難度書籍為輔。<br> 各年級書籍由專家老師挑選，並參考教育部推薦書單與文化部推薦書單。
+                                        </span>
+                                        <!--（每兩屆會請專家老師調整書）-->
+                                    </p>
+                                    <p>
+                                        參與認證的學生可自行評估閱讀能力，挑選合適的認證級別，並針對該認證級別的規劃及書籍內容進行閱讀活動。<br> 例如：二年級學生可報名二年級等級或四年級等級，四年級學生可報名四年級等級或國中等級，六年級學生可報名六年級等級或高中等級，並依照該等級的認證規劃進行閱讀活動。
+                                    </p>
+                                </div>
+                                <!-- 核心 -->
+                                <div class="book-item">
+                                    <h5 class="phase-title text-center">核心書籍</h5>
+                                    <p>
+                                        由多位專家教師於<span class="bold">科學技術、故事小說、人文社會</span>以及<span class="bold">跨域</span>四大領域中，評選與推薦適合不同學習階段的書籍。<br> 參與認證與比賽活動期間，需依照各認證級別所提供的核心書目，達到規定的最低閱讀書籍數量（如下表）。
+                                        <br> ※核心書籍
+                                        <span class="bold">建議</span>每月至少一本。
+                                        <!-- ，方可通過第一階段(閱讀規劃)證賽。 -->
+                                    </p>
+                                    <div class="container">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered text-center align-middle mx-auto" style="width: 90%; table-layout: auto;">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>國小二年級</th>
+                                                        <th>國小四年級</th>
+                                                        <th>國小六年級</th>
+                                                        <th>國中級</th>
+                                                        <th>高中級</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>最低閱讀數量</td>
+                                                        <td>8</td>
+                                                        <td>8</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                        <td>4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>核心書籍總數</td>
+                                                        <td>16</td>
+                                                        <td>16</td>
+                                                        <td>16</td>
+                                                        <td>16</td>
+                                                        <td>16</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 選讀 -->
+                                <div class="book-item">
+                                    <h5 class="phase-title text-center">選讀書籍</h5>
+                                    <p>
+                                        由<span class="bold">科學技術、故事小說</span>以及<span class="bold">人文社會</span>三大領域中獲獎與文化部及教育部推薦之書籍。<br> 參與認證與比賽活動期間，需依照各認證級別所提供的選讀書目，達到規定的最低閱讀書籍數量（如下表）。
+                                        <!-- ，方可通過第一階段(閱讀規劃)證賽。 -->
+                                    </p>
+                                    <div class="container">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered text-center align-middle mx-auto" style="width: 90%; table-layout: auto;">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>國小二年級</th>
+                                                        <th>國小四年級</th>
+                                                        <th>國小六年級</th>
+                                                        <th>國中級</th>
+                                                        <th>高中級</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>最低閱讀數量</td>
+                                                        <td>30</td>
+                                                        <td>15</td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>選讀書籍總數</td>
+                                                        <td>180</td>
+                                                        <td>150</td>
+                                                        <td>90</td>
+                                                        <td>90</td>
+                                                        <td>90</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- 自選 -->
+                                <div class="book-item">
+                                    <h5 class="phase-title text-center">自選書籍</h5>
+                                    <p>
+                                        鼓勵家長定期帶領學生前往圖書館或書店選書、借閱或購買書籍，以促進親子互動，同時培養學生自主探索的能力，並建立個人閱讀興趣與習慣，
+                                        <strong>學生須自行選擇本書籍地圖以外的書籍作為自選閱讀書目</strong>。惟不可選讀漫畫、雜誌、工具書。<br> 參與認證與比賽活動期間，需達到各認證級別所規定的最低自選書閱讀書籍數量（如下表）。
+                                        <!-- ，方可通過第一階段(閱讀規劃)證賽。 -->
+                                    </p>
+                                    <div class="container">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered text-center align-middle mx-auto" style="width:90%; table-layout: auto;">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>國小二年級</th>
+                                                        <th>國小四年級</th>
+                                                        <th>國小六年級</th>
+                                                        <th>國中級</th>
+                                                        <th>高中級</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>最低閱讀數量</td>
+                                                        <td>15</td>
+                                                        <td>6</td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>自選書籍總數</td>
+                                                        <td>無上限</td>
+                                                        <td>無上限</td>
+                                                        <td>無上限</td>
+                                                        <td>無上限</td>
+                                                        <td>無上限</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 證賽書單（預設隱藏） -->
+                            <section class="tab-pane fade book" id="certificationList">
+                                <!-- 書單篩選區域 -->
+                                <div class="book-item">
+                                    <h5 class="phase-title text-center"> 閱讀書籍</h5>
+                                    <div class="container mb-4">
+                                        <div class="row g-3 align-items-center">
+                                            <!-- 組別選單 -->
+                                            <div class="col-lg-3 col-md-6">
+                                                <label for="groupSelect" class="form-label">組別</label>
+                                                <select class="form-select" id="groupSelect">
+                                                <option value="">全部</option>
+                                                <option value="國小二年級">國小二年級</option>
+                                                <option value="國小四年級">國小四年級</option>
+                                                <option value="國小六年級">國小六年級</option>
+                                                <option value="國中級">國中級</option>
+                                                <option value="高中級">高中級</option>
+                                            </select>
+                                            </div>
+
+                                            <!-- 領域選單 -->
+                                            <div class="col-lg-3 col-md-6">
+                                                <label for="categorySelect" class="form-label">領域</label>
+                                                <select class="form-select" id="categorySelect">
+                                                <option value="">全部</option>
+                                                <option value="科學技術">科學技術</option>
+                                                <option value="故事小說">故事小說</option>
+                                                <option value="人文社會">人文社會</option>
+                                                <option value="跨領域">跨領域</option>
+                                            </select>
+                                            </div>
+
+                                            <!-- 深度選單 -->
+                                            <div class="col-lg-3 col-md-6">
+                                                <label for="depthSelect" class="form-label">深度</label>
+                                                <select class="form-select" id="depthSelect">
+                                                <option value="">全部</option>
+                                                <option value="繪本">繪本</option>
+                                                <option value="橋梁書">橋梁書</option>
+                                                <option value="初階文字書">初階文字書</option>
+                                                <option value="中階文字書">中階文字書</option>
+                                                <option value="高階文字書">高階文字書</option>
+                                            </select>
+                                            </div>
+                                            <!-- 核心選讀書籍 -->
+                                            <div class="col-lg-3 col-md-6">
+                                                <label for="needSelect" class="form-label">核心/選讀</label>
+                                                <select class="form-select" id="needSelect">
+                                                <option value="">全部</option>
+                                                <option value="核心書籍">核心書籍</option>
+                                                <option value="選讀書籍">選讀書籍</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 書籍清單區域 -->
+                                <div class="book-item">
+                                    <!-- <h5 class="item-title"> 書籍清單</h5> -->
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center">
+                                            <thead class="table-info">
+                                                <tr>
+                                                    <th>年級</th>
+                                                    <th>書名</th>
+                                                    <th>ISBN</th>
+                                                    <th>領域</th>
+                                                    <th>深度</th>
+                                                    <th>核心/選讀</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="bookList">
+                                                <tr>
+                                                    <td colspan="6" class="text-muted">請選擇條件以顯示書籍</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </section>
+                            </div>
+                        </div>
+
+                        <!-- =============================活動報名 ===============================================-->
+                        <div class="tab-pane fade" id="pills-apply" role="tabpanel" aria-labelledby="pills-apply-tab">
+                            <div class="topbar">
+                                <h4>活動報名</h4>
+                                <hr>
+                            </div>
+                            <section class="apply">
+                                <div class="apply-item">
+                                    <h5 class="phase-title text-center">報名時間</h5>
+                                    <p>
+                                        即日起至114年09月30日（星期二）下午5時止。主辦單位將依報名優先順序及報名表件進行審核，並於五個工作天內寄發報名成功通知信。
+                                    </p>
+                                </div>
+                                <div class="apply-item">
+                                    <h5 class="phase-title text-center">報名資格</h5>
+                                    <p>
+                                        開放全臺公私立國民小學二年級至六年級在學學生申請（包含附設國民小學、國民中學之國小部、高級中學之國小部），惟須以學生、家長（監護人）、班級導師三人一組報名參加。每位班級導師至多指導兩名學生。<br>
+                                    </p>
+                                </div>
+                                <div class="apply-item">
+                                    <h5 class="phase-title text-center ">認證等級</h5>
+                                    <!-- <ol>
+                                <li>本活動每位學生<span class="bold">新台幣1,000元</span>整。
+                                <li>過程階段中途退出或未通過者，予以退費新台幣300元整。
+                                <li>持有清寒證明或中低收入戶證明者，免收報名費。
+                            </ol> -->
+                                    <p>本活動設有5等級閱讀認證，分別為【國小二年級】、【國小四年級】、【國小六年級】、【國中級】、【高中級】，學生可依自身閱讀能力，擇一等級報名參加。[例]四年級學生評估自身閱讀能力後，可選擇報名四年級等級，或六年級等級，或國中等級認證。 </p>
+                                </div>
+                                <div class="apply-item">
+                                    <h5 class="phase-title text-center">報名方式</h5>
+                                    <div style="display: flex; justify-content: center; align-items: center; width: 80%; margin: 1rem auto;">
+                                        <img src="/student/img/報名流程圖.png" style="max-width: 60%; height: auto; display: block; padding-bottom: 2rem;" alt="報名流程圖">
+                                    </div>
+                                    <ol class="apply-numbering">
+                                        <li>
+                                            <span style="font-weight: bold;">報名方式：</span> 一律採網路報名，有意參加者請填寫線上報名表單。報名前請先備妥下列表件：「學生個人正面照片」、「著作權、肖像權暨個人資料授權同意書」、「導師推薦表」及「校長行政配合同意書」。
+                                            <br>
+                                            <a href="https://forms.gle/5oTwepSKkYcmapM6A" target="_blank">
+                                                <button class="apply-btn">報名表單</button>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            如有任何問題，請洽活動聯絡人：彭小姐<br>電話：(03)422-7151轉35405<br>E-mail：ptsreading@cl.ncu.edu.tw
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="apply-item">
+                                    <h5 class="phase-title text-center">報名表件</h5>
+                                    <p>報名前請先備妥以下表件：</p>
+                                    <ol style="list-style-type: disc;">
+
+                                        <li>著作權授權暨個人資料提供同意書
+                                            <a href="pdf/個人認證_著作權授權同意書.pdf" target="_blank">
+                                                <button class="form-btn">下載</button>
+                                            </a>
+                                        </li>
+                                        <li>導師推薦表
+                                            <a href="pdf/個人認證_導師推薦表.pdf" target="_blank">
+                                                <button class="form-btn">下載</button>
+                                            </a>
+                                        </li>
+                                        <li>校長行政配合同意書
+                                            <a href="pdf/個人認證-校長行政配合同意書.pdf" target="_blank">
+                                                <button class="form-btn">下載</button>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="apply-item">
+                                    <h5 class="phase-title text-center" style="padding-bottom: 2rem;">注意事項</h5>
+                                    <ol class="apply-numbering">
+                                        <li>報名資料如有不實或有涉及任何違反社會善良風俗或法令之行為，主辦單位有權取消其報名者資格，並保留相關損失之法律追訴權。</li>
+                                        <li>主辦單位保留隨時修改、變更、暫停或終止本活動內容之權利，並公告於活動網站。</li>
+                                        <li>本活動依<a href="pdf/第二屆明日閱讀習慣暨家校共讀博覽會-活動簡章_個人認證.pdf" target="_blank">簡章</a>辦理，如有未盡事宜，主辦單位得隨時補充之。</li>
+                                    </ol>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- 注意事項 -->
+                        <div class="tab-pane fade" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
+                            <div class="topbar">
+                                <h4>注意事項</h4>
+                                <hr>
+                            </div>
+                            <section class="notice">
+                                <div class="notice-item">
+                                    <h5 class="item-title">注意事項</h5>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+        </main>
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="imageModalLabel">放大圖片</h5> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img id="modalImage" src="" class="fullscreen-img" alt="放大圖片">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="footer  text-center">
+            <div class="footer-content">
+                <p>聯絡我們：<a href="mailto:PTSreading@cl.ncu.edu.tw">PTSreading@cl.ncu.edu.tw</a></p>
+                <p>© 2008-2025 National Central University. All Rights Reserved.</p>
+            </div>
+        </footer>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/javascript.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const primaryHeader = document.querySelector(".primary-header");
+        const secondaryHeader = document.querySelector(".secondary-header");
+        const secondaryHeaderOriginalStyle = secondaryHeader.getAttribute("style");
+        let switched = false;
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > primaryHeader.offsetHeight) {
+                if (!switched) {
+                    switched = true;
+                    // 隱藏 primary-header
+                    primaryHeader.style.display = "none";
+                    // 將 secondary-header 固定到頂部，並保留其樣式
+                    secondaryHeader.style.position = "fixed";
+                    secondaryHeader.style.top = "0";
+                    secondaryHeader.style.zIndex = "1030"; // 確保在最上層
+                }
+            } else {
+                if (switched) {
+                    switched = false;
+                    // 恢復 primary-header
+                    primaryHeader.style.display = "block";
+                    // 還原 secondary-header 的原始樣式
+                    secondaryHeader.setAttribute("style", secondaryHeaderOriginalStyle);
+                }
+            }
+        });
+    });
+</script>
+
+</html>
+
+</html>
