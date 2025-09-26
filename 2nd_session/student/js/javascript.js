@@ -307,8 +307,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function readExcelFile() {
         const files = [
-            "/booklist/核心書單_全.xlsx",
-            "/booklist/選讀書單_全.xlsx"
+            "/booklist/第二屆_核心書單.xlsx",
+            "/booklist/第二屆_選讀書單.xlsx"
         ];
 
         booksData = []; // 清空舊資料
