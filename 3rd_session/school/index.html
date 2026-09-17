@@ -125,7 +125,17 @@
                             <div class="news-item">
                                 <div class="news-date">2026/09/17</div>
                                 <div class="news-content">
-                                    第二屆「明日閱讀習慣暨家校共讀博覽會」認證通過名單
+                                    <a
+                                href="#pills-list"
+                                onclick="
+                                event.preventDefault();
+                                 const tab = document.getElementById('pills-list-tab');
+                         tab.click();
+                tab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            "
+        >
+            第二屆「明日閱讀習慣暨家校共讀博覽會」認證通過名單
+        </a>
                                 </div>
                             </div>
                             <!-- <div class="news-item">
@@ -656,7 +666,6 @@
                 class="img-fluid"
                 style="width: 100%; max-width: 1000px; height: auto;">
 
-              
                 </div>
                 </div>
                 </div>
